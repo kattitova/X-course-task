@@ -1,0 +1,120 @@
+@charset "UTF-8";
+* {
+  box-sizing: border-box;
+  font-family: "Raleway", sans-serif;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  background-color: #f8e9ce;
+  padding: 60px 50px;
+}
+
+.page-wrapper {
+  background-color: #fffddc;
+  border: 8px solid #fdf7ed;
+  border-radius: 5px;
+}
+
+button {
+  border: none;
+  border-radius: 10px;
+  font-size: 16px;
+  outline: none;
+  padding: 5px 10px;
+}
+
+header {
+  display: flex;
+  justify-content: space-between;
+  padding: 0 20px;
+  height: 70px;
+  width: 100%;
+  position: relative;
+}
+header::after {
+  content: "";
+  border-bottom: 1px solid #f8e9ce;
+  position: absolute;
+  bottom: 0;
+  width: 98%;
+  left: 50%;
+  transform: translateX(-50%);
+}
+header .logo-wrapper {
+  align-self: center;
+  display: flex;
+}
+header .logo-wrapper .logo-text {
+  font-size: 22px;
+  font-weight: 600;
+}
+header .logo-text.author::before {
+  content: "/";
+  margin: 0 10px;
+}
+header img {
+  height: 100%;
+}
+header .user-panel {
+  align-items: center;
+  display: flex;
+}
+header .cart {
+  height: 100%;
+  position: relative;
+}
+header .cart.full::before {
+  content: "";
+  background-color: red;
+  border-radius: 50%;
+  display: block;
+  height: 10px;
+  position: absolute;
+  top: 2px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 10px;
+}
+
+.book-wrapper {
+  display: flex;
+  justify-content: space-between;
+  padding: 0 20px;
+}
+
+/*картка книжки для сторінки Каталог книжок*/
+.book-card {
+  background-color: grey;
+  height: 280px;
+  width: 220px;
+  padding: 10px;
+}
+
+.book-img {
+  background-color: white;
+  height: 80%;
+}
+
+/* блок для підняття панелькі Add to cart*/
+.parent {
+  border: 1px solid black;
+  width: 200px;
+  height: 50px;
+  perspective: 300px;
+}
+.parent:hover .block {
+  transform: rotateX(0deg);
+  transform-origin: bottom;
+  transition: 0.7s linear transform;
+}
+
+.block {
+  background-color: green;
+  width: 100%;
+  height: 100%;
+  transform: rotateX(95deg);
+  transform-origin: bottom;
+  transition: 0.7s linear transform;
+}/*# sourceMappingURL=styles.css.map */
