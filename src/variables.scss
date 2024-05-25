@@ -1,0 +1,12 @@
+$fontSize: 16px;
+$sectionPadding: 0 20px;
+$bgColor: #f8e9ce;
+$wrapperColor: #fffddc;
+$borderColor: #fdf7ed;
+$pageColor: #fffdfb;
+
+@mixin settingFlexPadding($padding, $jc) {
+    display: flex;
+    justify-content: $jc;
+    padding: $padding;
+}

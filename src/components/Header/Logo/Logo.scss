@@ -1,0 +1,64 @@
+@import "../../../variables";
+
+header {
+    @include settingFlexPadding($sectionPadding, space-between);
+    height: 70px;
+    width: 100%;
+    position: relative;
+
+    &::after {
+        content: "";
+        border-bottom: 1px solid $bgColor;
+        position: absolute;
+        bottom: 0;
+        width: 98%;
+        left: 50%;
+        transform: translateX(-50%);
+    }
+
+    .logo-wrapper {
+        align-self: center;
+        display: flex;
+
+        .logo-text {
+            font-size: 22px;
+            font-weight: 600;
+        }
+    }
+
+    .logo-text.author {
+        &::before {
+            content: "/";
+            margin: 0 10px;
+        }
+    }
+
+    img {
+        height: 100%;
+    }
+
+    .user-panel {
+        align-items: center;
+        display: flex;
+    }
+
+    .cart {
+        height: 100%;
+        position: relative;
+
+        &.full {
+            &::before {
+                content: "";
+                background-color: red;
+                border-radius: 50%;
+                display: block;
+                height: 10px;
+                position: absolute;
+                top: 2px;
+                left: 50%;
+                transform: translateX(-50%);
+                width: 10px;
+            }
+        }
+    }
+}

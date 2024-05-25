@@ -1,0 +1,52 @@
+header {
+  display: flex;
+  justify-content: space-between;
+  padding: 0 20px;
+  height: 70px;
+  width: 100%;
+  position: relative;
+}
+header::after {
+  content: "";
+  border-bottom: 1px solid #f8e9ce;
+  position: absolute;
+  bottom: 0;
+  width: 98%;
+  left: 50%;
+  transform: translateX(-50%);
+}
+header .logo-wrapper {
+  align-self: center;
+  display: flex;
+}
+header .logo-wrapper .logo-text {
+  font-size: 22px;
+  font-weight: 600;
+}
+header .logo-text.author::before {
+  content: "/";
+  margin: 0 10px;
+}
+header img {
+  height: 100%;
+}
+header .user-panel {
+  align-items: center;
+  display: flex;
+}
+header .cart {
+  height: 100%;
+  position: relative;
+}
+header .cart.full::before {
+  content: "";
+  background-color: red;
+  border-radius: 50%;
+  display: block;
+  height: 10px;
+  position: absolute;
+  top: 2px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 10px;
+}/*# sourceMappingURL=Logo.css.map */
