@@ -30,6 +30,7 @@
     box-shadow: -3px 5px 7px lightgray;
     margin: 20px 30px;
     width: calc(100% - 60px);
+    aspect-ratio: 3 / 4;
 }
 
 .book-image-wrapper {
@@ -53,6 +54,10 @@
 
     .book-author {
         font-size: 0.9em;
+        text-overflow: ellipsis;
+        white-space: nowrap;
+        overflow: hidden;
+        width: 100%;
     }
 
     .book-price {

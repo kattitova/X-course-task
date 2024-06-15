@@ -17,15 +17,7 @@ body {
     background-color: $wrapperColor;
     border: 8px solid $borderColor;
     border-radius: 5px;
-    height: calc(100vh - 2*$bodyVerticalPadding);
+    min-height: calc(100vh - 2*$bodyVerticalPadding);
     @include settingFlexPadding(0, space-between);
     flex-direction: column;
 }
-
-// button {
-//     border: none;
-//     border-radius: 10px;
-//     font-size: $fontSize;
-//     outline: none;
-//     padding: 5px 10px;
-// }

@@ -1,0 +1,26 @@
+.single-book {
+  display: grid;
+  grid-template-areas: "image info price" "description description description";
+  padding: 20px;
+}
+.single-book__image {
+  grid-area: image;
+}
+.single-book__info {
+  grid-area: info;
+}
+.single-book__price {
+  grid-area: price;
+}
+.single-book__price .button-cart .parent {
+  perspective: none;
+  position: relative;
+}
+.single-book__price .button-cart .parent .block {
+  transform: none;
+  transition: none;
+  border-radius: 5px;
+}
+.single-book__description {
+  grid-area: description;
+}/*# sourceMappingURL=Book.css.map */

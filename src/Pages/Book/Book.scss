@@ -1,0 +1,35 @@
+.single-book {
+    display: grid;
+    grid-template-areas: "image info price"
+    "description description description";
+    padding: 20px;
+
+    &__image {
+        grid-area: image;
+    }
+
+    &__info {
+        grid-area: info;
+    }
+
+    &__price {
+        grid-area: price;
+
+        .button-cart {
+            .parent {
+                perspective: none;
+                position: relative;
+
+                .block {
+                    transform: none;
+                    transition: none;
+                    border-radius: 5px;
+                }
+            }
+        }
+    }
+
+    &__description {
+        grid-area: description;
+    }
+}

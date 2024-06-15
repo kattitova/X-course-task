@@ -25,8 +25,8 @@ function App() {
         <Routes>
           <Route path="/" element={<Navigate replace to="signin" />}/>
           <Route path="signin" element={<Signin />} />
-          <Route path="books-list" element={<BooksList booksList={booksList} />} />
-          <Route path="books-list/:id" element={<Book booksList={booksList} />} />
+          <Route path="books" element={<BooksList booksList={booksList} />} />
+          <Route path="books/:id" element={<Book booksList={booksList} />} />
         </Routes>
         <Footer />
         </div>
