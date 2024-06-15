@@ -1,1 +1,1 @@
-{"version":3,"sources":["BooksList.scss","../../variables.scss","BooksList.css"],"names":[],"mappings":"AAEA;ECMI,aAAA;EACA,8BDNkC;ECOlC,aDP4B;EAC5B,eAAA;EACA,qBAAA;OAAA,gBAAA;EACA,aAAA;AECJ","file":"BooksList.css"}
+{"version":3,"sources":["BooksList.scss","../../variables.scss","BooksList.css"],"names":[],"mappings":"AAEA;ECUI,aAAA;EACA,8BDVkC;ECWlC,aDX4B;EAC5B,eAAA;EACA,qBAAA;OAAA,gBAAA;EACA,aAAA;AECJ","file":"BooksList.css"}

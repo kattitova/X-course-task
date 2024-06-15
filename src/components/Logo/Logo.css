@@ -1,14 +1,14 @@
 header {
   display: flex;
   justify-content: space-between;
-  padding: 0 20px;
+  padding: 10px 20px;
   height: 70px;
   width: 100%;
   position: relative;
 }
 header::after {
   content: "";
-  border-bottom: 1px solid #f8e9ce;
+  border-bottom: 1px solid #C8C5BC;
   position: absolute;
   bottom: 0;
   width: 98%;
@@ -29,6 +29,11 @@ header .logo-text.author::before {
 }
 header img {
   height: 100%;
+}
+header img.avatar {
+  border: 1px solid #0a8989;
+  padding: 3px;
+  border-radius: 50%;
 }
 header .user-panel {
   align-items: center;

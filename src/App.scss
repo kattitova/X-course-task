@@ -1,21 +1,25 @@
 @import "./variables";
+@import url('https://fonts.googleapis.com/css2?family=Nunito+Sans');
 
 * {
     box-sizing: border-box;
-    font-family: "Raleway", sans-serif;
+    font-family: "Nunito Sans", sans-serif;
     margin: 0;
     padding: 0;
 }
 
 body {
     background-color: $bgColor;
-    padding: 60px 50px;
+    padding: $bodyVerticalPadding 50px;
 }
 
 .App {
     background-color: $wrapperColor;
     border: 8px solid $borderColor;
     border-radius: 5px;
+    height: calc(100vh - 2*$bodyVerticalPadding);
+    @include settingFlexPadding(0, space-between);
+    flex-direction: column;
 }
 
 // button {

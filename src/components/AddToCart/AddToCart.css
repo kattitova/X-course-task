@@ -1,5 +1,4 @@
 @charset "UTF-8";
-/*картка книжки для сторінки Каталог книжок*/
 /* блок для підняття панелькі Add to cart*/
 .parent {
   width: 100%;
@@ -21,7 +20,7 @@
   justify-content: center;
   padding: 0;
   align-items: center;
-  background-color: #27AE61;
+  background-color: #0a8989;
   width: 100%;
   height: 100%;
   transform: rotateX(95deg);
@@ -29,4 +28,6 @@
   transition: 0.7s linear transform;
   font-size: 14px;
   font-weight: 600;
+  -moz-column-gap: 7px;
+       column-gap: 7px;
 }/*# sourceMappingURL=AddToCart.css.map */

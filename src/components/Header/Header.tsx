@@ -1,5 +1,5 @@
-import Logo from "./Logo/Logo";
-import UserPanel from "./UserPanel/UserPanel";
+import Logo from "../Logo/Logo";
+import UserPanel from "../UserPanel/UserPanel";
 import "./Header.css";
 
 export default function Header() {

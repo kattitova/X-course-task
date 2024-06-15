@@ -1,8 +1,26 @@
-import BookCard from "../../components/Header/BookCard/BookCard";
+import BookCard from "../../components/BookCard/BookCard";
 import "./BooksList.css";
-import booksList from "../../assets/books.json";
 
-export default function BookList() {
+type propsType = {
+    booksList: {
+        books: Array<bookType>,
+    },
+};
+
+type bookType = {
+        id: number,
+        author: string,
+        price: number,
+        image: string,
+        title: string,
+        level: string,
+        tags: string[],
+        amount?: number,
+        shortDescription: string,
+        description: string,
+};
+
+export default function BookList({booksList} : propsType) {
 
     const list = booksList.books.map(book => {
         return (

@@ -1,4 +1,4 @@
-@import "../../../variables";
+@import "../../variables";
 
 .user-panel {
     .signin {
@@ -7,5 +7,9 @@
         font-size: $fontSize;
         outline: none;
         padding: 5px 10px;
+    }
+
+    button {
+        @include buttonStyle;
     }
 }

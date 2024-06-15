@@ -1,4 +1,4 @@
-@import "../../../variables";
+@import "../../variables";
 
 header {
     @include settingFlexPadding($sectionPadding, space-between);
@@ -35,6 +35,12 @@ header {
 
     img {
         height: 100%;
+
+        &.avatar {
+            border: 1px solid $activeColor;
+            padding: 3px;
+            border-radius: 50%;
+        }
     }
 
     .user-panel {

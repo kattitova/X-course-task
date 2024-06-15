@@ -1,18 +1,5 @@
 @import "../../variables";
 
-/*картка книжки для сторінки Каталог книжок*/
-// .book-card {
-//     background-color: grey;
-//     height: 280px;
-//     width: 220px;
-//     padding: 10px;
-// }
-
-// .book-img {
-//     background-color: white;
-//     height: 80%;
-// }
-
 /* блок для підняття панелькі Add to cart*/
 .parent {
     width: 100%;
@@ -33,7 +20,7 @@
 .block {
     @include settingFlexPadding(0, center);
     align-items: center;
-    background-color: #27AE61;
+    background-color: $activeColor;
     width: 100%;
     height: 100%;
     transform: rotateX(95deg);
@@ -41,4 +28,5 @@
     transition: 0.7s linear transform;
     font-size: 14px;
     font-weight: 600;
+    column-gap: 7px;
 }

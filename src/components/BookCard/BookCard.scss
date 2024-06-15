@@ -1,0 +1,63 @@
+@import "../../variables";
+
+.book-wrapper {
+    border: 1px solid $pageColor;
+    border-radius: 2px;
+    overflow: hidden;
+    padding: 20px 0;
+    width: calc((100% - 40px)/5);
+    position: relative;
+
+    &::before {
+        content: " ";
+        display: block;
+        height: 100%;
+        position: absolute;
+        top: 50%;
+        width: 200%;
+        z-index: 0;
+        transform: skewY(14deg);
+        transform-origin: 0px 0px 0px;
+        background-color: #e5e3df;
+    }
+
+    &:hover {
+        border-color: $activeColor;
+    }
+}
+
+.book-image {
+    box-shadow: -3px 5px 7px lightgray;
+    margin: 20px 30px;
+    width: calc(100% - 60px);
+}
+
+.book-image-wrapper {
+    position: relative;
+}
+
+.book-info {
+    position: relative;
+    @include settingFlexPadding(10px 10px 0 10px, space-around);
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+
+    .book-title {
+        font-weight: 600;
+        text-overflow: ellipsis;
+        white-space: nowrap;
+        overflow: hidden;
+        width: 100%;
+    }
+
+    .book-author {
+        font-size: 0.9em;
+    }
+
+    .book-price {
+        font-size: 1.1em;
+        font-weight: 600;
+        color: $activeColor;
+    }
+}
