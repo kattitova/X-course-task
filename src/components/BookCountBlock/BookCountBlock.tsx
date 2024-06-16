@@ -32,15 +32,16 @@ export default function BookCountBlock({price} : BookPropsType) {
         <>
             <div>Book price ${price}</div>
             <div>Count
-                <button className="decrement-button" onClick={decrement}>-</button>
+                <button className="decrement-button" data-testid="decrement-button" onClick={decrement}>-</button>
                 <input 
                     className="count-input"
+                    data-testid="count-input"
                     value={count}
                     onChange={countChangeHandle}
                 />
-                <button className="increment-button" onClick={increment}>+</button>
+                <button className="increment-button" data-testid="increment-button" onClick={increment}>+</button>
             </div>
-            <div>Total Price ${totalPrice}</div>
+            <div>Total Price $<span data-testid="total-amount">{totalPrice}</span></div>
             <AddToCart />
         </>
     );
