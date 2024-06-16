@@ -1,6 +1,7 @@
 import { useParams } from "react-router-dom";
-import "./Book.css";
 import BookCountBlock from "../../components/BookCountBlock/BookCountBlock";
+import "./Book.css";
+import imgNotFound from "../../assets/images/imageNotFound.png";
 
 type propsType = {
     booksList: {
@@ -28,13 +29,13 @@ export default function Book({booksList} : propsType) {
     return (
         <div className="single-book">
             <div className="single-book__image">
-                <img src={book.image} alt={book.title}/>
+                <img src={book.image || imgNotFound} alt={book.title}/>
             </div>
             <div className="single-book__info">
-                {book.title}
-                Author(s): {book.author}
-                Book level: {book.level}
-                Book tags: {book.tags.join(", ")}
+                <h2>{book.title}</h2>
+                <p>Author(s): {book.author}</p>
+                <p>Book level: {book.level}</p>
+                <p>Book tags: {book.tags.join(", ")}</p>
             </div>
             <div className="single-book__price">
                 <BookCountBlock 
@@ -44,6 +45,7 @@ export default function Book({booksList} : propsType) {
             <div className="single-book__description">
                 {book.description}
             </div>
+            {/* <div className="single-book__paper-frame"></div> */}
         </div>
     );
 };

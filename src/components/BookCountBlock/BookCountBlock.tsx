@@ -11,7 +11,7 @@ export default function BookCountBlock({price} : BookPropsType) {
 
     useEffect(() => {
         setTotalPrice((prevState) => Number(count) * price);
-    }, [count]);
+    }, [count, price]);
 
     const countChangeHandle = (e: React.ChangeEvent<HTMLInputElement>) => {
         setCount(e.currentTarget.value);
@@ -30,18 +30,34 @@ export default function BookCountBlock({price} : BookPropsType) {
 
     return (
         <>
-            <div>Book price ${price}</div>
-            <div>Count
-                <button className="decrement-button" data-testid="decrement-button" onClick={decrement}>-</button>
-                <input 
-                    className="count-input"
-                    data-testid="count-input"
-                    value={count}
-                    onChange={countChangeHandle}
-                />
-                <button className="increment-button" data-testid="increment-button" onClick={increment}>+</button>
+            <div className="single-book__price--price">Book price, $<span>{price}</span></div>
+            <div className="single-book__price--count">
+                Count
+                <div className="single-book__price--buttons">
+                    <button 
+                        className="decrement-button" 
+                        data-testid="decrement-button" 
+                        onClick={decrement}
+                        disabled={Number(count) <= 1 ? true : false}
+                    >
+                        -
+                    </button>
+                    <input 
+                        className="count-input"
+                        data-testid="count-input"
+                        value={count}
+                        onChange={countChangeHandle}
+                    />
+                    <button 
+                        className="increment-button" 
+                        data-testid="increment-button" 
+                        onClick={increment}
+                    >
+                        +
+                    </button>
+                </div>
             </div>
-            <div>Total Price $<span data-testid="total-amount">{totalPrice}</span></div>
+            <div className="single-book__price--total">Total Price, $<span data-testid="total-amount">{totalPrice}</span></div>
             <AddToCart />
         </>
     );

@@ -3,8 +3,8 @@ import userEvent from '@testing-library/user-event'
 import '@testing-library/jest-dom'
 import BookCountBlock from '../components/BookCountBlock/BookCountBlock'
 
-describe("Testing book count changing", () => {
-    test("Book count increase", async () => {
+describe("Тестування сторінки 'Окрема книга'", () => {
+    test("При кліку збільшення кількості - кількість повинна збільшуватися", async () => {
         render(<BookCountBlock price={10} />);
         const button = screen.getByTestId("increment-button");
         expect(button).toBeInTheDocument();
@@ -18,7 +18,7 @@ describe("Testing book count changing", () => {
         expect(input.value).toBe("3");
     });
 
-    test("Book count decrease", async () => {
+    test("При кліку зменшення кількості - кількість повинна зменшуватися", async () => {
         render(<BookCountBlock price={10} />);
         const button = screen.getByTestId("decrement-button");
         expect(button).toBeInTheDocument();
@@ -32,16 +32,18 @@ describe("Testing book count changing", () => {
         expect(input.value).toBe("1");
     });
 
-    test("Changing total amount", async () => {
-        render(<BookCountBlock price={10} />);
+    test("При зміні кількості - загальна вартість повинна змінюватися", () => {
+        const bookPrice = 10;
+        render(<BookCountBlock price={bookPrice} />);
 
         const input = screen.getByTestId<HTMLInputElement>("count-input");
         expect(input).toBeInTheDocument();
         
-        //await userEvent.type(input, "2");
+        const totalAmount = screen.getByTestId("total-amount");
+        expect(totalAmount.textContent).toBe(String(bookPrice));
+
         fireEvent.change(input, {target: {value: "2"}});
 
-        const totalAmount = screen.getByTestId("total-amount");
         expect(totalAmount.textContent).toBe("20");
     });
 });

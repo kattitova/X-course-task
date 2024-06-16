@@ -1,16 +1,40 @@
 .single-book {
   display: grid;
   grid-template-areas: "image info price" "description description description";
-  padding: 20px;
+  padding: 50px 100px;
+  grid-template-columns: auto 1fr 1fr;
+  grid-gap: 20px 40px;
 }
 .single-book__image {
   grid-area: image;
+  z-index: 2;
+  position: relative;
+}
+.single-book__image img {
+  box-shadow: -6px 6px 8px lightgray;
 }
 .single-book__info {
   grid-area: info;
 }
+.single-book__info h2 {
+  font-size: 1.8em;
+}
+.single-book__info p {
+  margin-top: 10px;
+}
 .single-book__price {
   grid-area: price;
+  border: 1px dotted #0a8989;
+  border-radius: 5px;
+  max-height: 250px;
+  display: flex;
+  justify-content: space-around;
+  padding: 20px;
+  flex-direction: column;
+  font-weight: 600;
+}
+.single-book__price .button-cart {
+  margin-top: 20px;
 }
 .single-book__price .button-cart .parent {
   perspective: none;
@@ -21,6 +45,71 @@
   transition: none;
   border-radius: 5px;
 }
+.single-book__price--price, .single-book__price--count, .single-book__price--total {
+  display: flex;
+  justify-content: space-between;
+  padding: 0;
+  align-items: center;
+}
+.single-book__price--buttons {
+  display: flex;
+  align-items: center;
+}
+.single-book__price--buttons input {
+  height: 30px;
+  width: 50px;
+  outline: none;
+  border: 1px solid #0a8989;
+  border-radius: 0;
+  border-left: none;
+  border-right: none;
+  text-align: center;
+  font-weight: 600;
+}
+.single-book__price--buttons button {
+  width: 30px;
+  height: 30px;
+  font-size: 1.6em;
+  line-height: 0;
+  color: gray;
+  outline: none;
+  cursor: pointer;
+  border: 1px solid #0a8989;
+}
+.single-book__price--buttons button:disabled {
+  cursor: not-allowed;
+}
+.single-book__price--buttons .decrement-button {
+  border-top-left-radius: 5px;
+  border-bottom-left-radius: 5px;
+}
+.single-book__price--buttons .increment-button {
+  border-top-right-radius: 5px;
+  border-bottom-right-radius: 5px;
+}
 .single-book__description {
   grid-area: description;
+  position: relative;
+  z-index: 1;
+  padding: 0 100px;
+}
+.single-book__description::before {
+  position: absolute;
+  content: "";
+  width: 90%;
+  height: calc(100% + 100px);
+  background-color: rgba(255, 255, 255, 0.6);
+  z-index: -1;
+  top: -70px;
+  left: 50%;
+  transform: translateX(-50%);
+}
+.single-book__description::after {
+  content: "";
+  position: absolute;
+  top: -35px;
+  width: 30%;
+  border-top: 1px solid #C8C5BC;
+  left: 50%;
+  transform: translateX(-50%);
 }/*# sourceMappingURL=Book.css.map */
