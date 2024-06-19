@@ -8,7 +8,9 @@ import Signin from './Pages/Signin/Signin';
 import BooksList from './Pages/BookList/BooksList';
 import Book from "./Pages/Book/Book";
 import Footer from "./components/Footer/Footer";
-import {Context} from "./components/Contex";
+import Cart from './Pages/Cart/Cart';
+import {Context} from "./context/Contex";
+import { OrderContext, arrayBooksType } from './context/OrderContext';
 
 import './App.css';
 import booksList from "./assets/books.json";
@@ -16,21 +18,25 @@ import booksList from "./assets/books.json";
 function App() {
   const [userName, setUserName] = useState("");
   const [isLogged, setLogged] = useState(false);
+  const [orderBooks, setBooks] = useState<Array<arrayBooksType>>([]);
   
   return (
     <Context.Provider value = {{userName, setUserName, isLogged, setLogged}}>
-      <BrowserRouter>
-        <div className="App">
-          <Header />
-        <Routes>
-          <Route path="/" element={<Navigate replace to="signin" />}/>
-          <Route path="signin" element={<Signin />} />
-          <Route path="books" element={<BooksList booksList={booksList} />} />
-          <Route path="books/:id" element={<Book booksList={booksList} />} />
-        </Routes>
-        <Footer />
-        </div>
-      </BrowserRouter>
+      <OrderContext.Provider value = {{orderBooks, setBooks}}>
+        <BrowserRouter>
+          <div className="App">
+            <Header />
+          <Routes>
+            <Route path="/" element={<Navigate replace to="signin" />}/>
+            <Route path="signin" element={<Signin />} />
+            <Route path="books" element={<BooksList booksList={booksList} />} />
+            <Route path="books/:id" element={<Book booksList={booksList} />} />
+            <Route path="cart" element={<Cart booksList={booksList}/>}></Route>
+          </Routes>
+          <Footer />
+          </div>
+        </BrowserRouter>
+      </OrderContext.Provider>
     </Context.Provider>
   );
 }

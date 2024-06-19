@@ -3,29 +3,30 @@ import AddToCart from "../AddToCart/AddToCart";
 
 type BookPropsType = {
     price: number,
+    bookID: number,
 }
 
-export default function BookCountBlock({price} : BookPropsType) {
-    const [count, setCount] = useState("1");
+export default function BookCountBlock({price, bookID} : BookPropsType) {
+    const [count, setCount] = useState(1);
     const [totalPrice, setTotalPrice] = useState(price);
 
     useEffect(() => {
-        setTotalPrice((prevState) => Number(count) * price);
+        setTotalPrice((prevState) => count * price);
     }, [count, price]);
 
     const countChangeHandle = (e: React.ChangeEvent<HTMLInputElement>) => {
-        setCount(e.currentTarget.value);
+        setCount(Number(e.currentTarget.value));
     }
 
     const decrement = () => {
         setCount((prevState) => {
-            const newCount = Number(prevState) - 1;
-            return newCount < 1 ? "1" : String(newCount);
+            const newCount = prevState - 1;
+            return newCount < 1 ? 1 : newCount;
         });
     }
 
     const increment = () => {
-        setCount((prevState) => String(Number(prevState) + 1));
+        setCount((prevState) => prevState + 1);
     }
 
     return (
@@ -38,7 +39,7 @@ export default function BookCountBlock({price} : BookPropsType) {
                         className="decrement-button" 
                         data-testid="decrement-button" 
                         onClick={decrement}
-                        disabled={Number(count) <= 1 ? true : false}
+                        disabled={count <= 1 ? true : false}
                     >
                         -
                     </button>
@@ -58,7 +59,7 @@ export default function BookCountBlock({price} : BookPropsType) {
                 </div>
             </div>
             <div className="single-book__price--total">Total Price, $<span data-testid="total-amount">{totalPrice}</span></div>
-            <AddToCart />
+            <AddToCart bookID={bookID} count={count}/>
         </>
     );
 }

@@ -5,7 +5,7 @@ import BookCountBlock from '../components/BookCountBlock/BookCountBlock'
 
 describe("Тестування сторінки 'Окрема книга'", () => {
     test("При кліку збільшення кількості - кількість повинна збільшуватися", async () => {
-        render(<BookCountBlock price={10} />);
+        render(<BookCountBlock price={10} bookID={1} />);
         const button = screen.getByTestId("increment-button");
         expect(button).toBeInTheDocument();
 
@@ -19,7 +19,7 @@ describe("Тестування сторінки 'Окрема книга'", () =
     });
 
     test("При кліку зменшення кількості - кількість повинна зменшуватися", async () => {
-        render(<BookCountBlock price={10} />);
+        render(<BookCountBlock price={10} bookID={1} />);
         const button = screen.getByTestId("decrement-button");
         expect(button).toBeInTheDocument();
 
@@ -34,7 +34,7 @@ describe("Тестування сторінки 'Окрема книга'", () =
 
     test("При зміні кількості - загальна вартість повинна змінюватися", () => {
         const bookPrice = 10;
-        render(<BookCountBlock price={bookPrice} />);
+        render(<BookCountBlock price={bookPrice} bookID={1} />);
 
         const input = screen.getByTestId<HTMLInputElement>("count-input");
         expect(input).toBeInTheDocument();

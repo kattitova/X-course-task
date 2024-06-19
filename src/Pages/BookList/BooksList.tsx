@@ -3,24 +3,7 @@ import SearchBook from "../../components/SearchBook/SearchBook";
 import SortByPrice from "../../components/SortByPrice/SortByPrice";
 import "./BooksList.css";
 
-type propsType = {
-    booksList: {
-        books: Array<bookType>,
-    },
-};
-
-type bookType = {
-        id: number,
-        author: string,
-        price: number,
-        image: string,
-        title: string,
-        level: string,
-        tags: string[],
-        amount?: number,
-        shortDescription: string,
-        description: string,
-};
+import {propsType} from "../../types/BookTypes";
 
 export default function BookList({booksList} : propsType) {
 

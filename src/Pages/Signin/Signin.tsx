@@ -1,6 +1,6 @@
 import { useContext, useEffect, useState } from "react";
 import { Link } from "react-router-dom";
-import {Context, contextType} from "../../components/Contex";
+import {Context, contextType} from "../../context/Contex";
 
 import nonAvatar from "../../assets/images/avatar.png"
 import "./Signin.css";

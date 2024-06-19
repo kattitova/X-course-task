@@ -1,0 +1,20 @@
+.cart__item {
+  display: grid;
+  grid-template-columns: 1fr 3fr repeat(4, 1fr);
+  align-items: center;
+  width: 100%;
+}
+.cart__item--image {
+  width: 60px;
+}
+.cart__item--deleteButton {
+  outline: none;
+  background: none;
+  border: none;
+  cursor: pointer;
+  font-size: 18px;
+  width: 30px;
+}
+.cart__item--deleteButton:hover {
+  color: #0a8989;
+}/*# sourceMappingURL=CartItem.css.map */

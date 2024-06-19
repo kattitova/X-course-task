@@ -3,24 +3,7 @@ import BookCountBlock from "../../components/BookCountBlock/BookCountBlock";
 import "./Book.css";
 import imgNotFound from "../../assets/images/imageNotFound.png";
 
-type propsType = {
-    booksList: {
-        books: Array<bookType>,
-    },
-};
-
-type bookType = {
-        id: number,
-        author: string,
-        price: number,
-        image: string,
-        title: string,
-        level: string,
-        tags: string[],
-        amount?: number,
-        shortDescription: string,
-        description: string,
-};
+import {propsType, bookType} from "../../types/BookTypes";
 
 export default function Book({booksList} : propsType) {
     const { id } = useParams();
@@ -40,12 +23,12 @@ export default function Book({booksList} : propsType) {
             <div className="single-book__price">
                 <BookCountBlock 
                     price={book.price}
+                    bookID={Number(id)}
                 />
             </div>
             <div className="single-book__description">
                 {book.description}
             </div>
-            {/* <div className="single-book__paper-frame"></div> */}
         </div>
     );
 };
