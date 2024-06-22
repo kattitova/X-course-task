@@ -15,7 +15,12 @@ export default function BookCountBlock({price, bookID} : BookPropsType) {
     }, [count, price]);
 
     const countChangeHandle = (e: React.ChangeEvent<HTMLInputElement>) => {
-        setCount(Number(e.currentTarget.value));
+        const inputValue = Number(e.currentTarget.value);
+        setCount(() => {
+            if (inputValue < 1) return 1;
+            else if (inputValue > 42) return 42;
+            else return inputValue;
+        });
     }
 
     const decrement = () => {
@@ -26,7 +31,10 @@ export default function BookCountBlock({price, bookID} : BookPropsType) {
     }
 
     const increment = () => {
-        setCount((prevState) => prevState + 1);
+        setCount((prevState) => {
+            const newCount = prevState + 1;
+            return newCount > 42 ? 42 : newCount;
+        });
     }
 
     return (
@@ -53,12 +61,18 @@ export default function BookCountBlock({price, bookID} : BookPropsType) {
                         className="increment-button" 
                         data-testid="increment-button" 
                         onClick={increment}
+                        disabled={count >= 42 ? true : false}
                     >
                         +
                     </button>
                 </div>
             </div>
-            <div className="single-book__price--total">Total Price, $<span data-testid="total-amount">{totalPrice}</span></div>
+            <div className="single-book__price--total">
+                Total Price, $
+                <span data-testid="total-amount">
+                    {totalPrice.toFixed(2)}
+                </span>
+            </div>
             <AddToCart bookID={bookID} count={count}/>
         </>
     );

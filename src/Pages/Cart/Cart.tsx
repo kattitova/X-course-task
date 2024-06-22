@@ -34,8 +34,16 @@ export default function Cart({booksList} : propsType) {
     const Cart = () => {
         return (
             <>
+                <div className="cart__item cart__item--title">
+                    <p>Book</p>
+                    <p>Title</p>
+                    <p>Price</p>
+                    <p>Count</p>
+                    <p>Total price</p>
+                    <p></p>
+                </div>
                 { orderList }
-                Total: ${totalAmount}
+                Total Amount: ${ Number(totalAmount.toFixed(2)) } 
             </>
         );
     };

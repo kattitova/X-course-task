@@ -17,7 +17,13 @@ export default function AddToCart({bookID, count}:propsType) {
     const addToCartHandler = () => {
         setButtonStatus(true);
 
-        order.setBooks(prevState => [...prevState, {bookID: bookID, count: count}]);
+        order.setBooks(prevState => {
+            const bookIndex = prevState.findIndex(book => book.bookID === bookID);
+            if (bookIndex > 0) {
+                prevState[bookIndex].count += count;
+                return prevState;
+            } else return [...prevState, {bookID: bookID, count: count}]
+        });
     }
 
     return (

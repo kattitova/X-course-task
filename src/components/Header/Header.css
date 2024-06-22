@@ -26,33 +26,4 @@ header .logo-wrapper .logo-text {
 header .logo-text.author::before {
   content: "/";
   margin: 0 10px;
-}
-header img {
-  height: 100%;
-}
-header img.avatar {
-  border: 1px solid #0a8989;
-  padding: 3px;
-  border-radius: 50%;
-  margin-right: 10px;
-}
-header .user-panel {
-  align-items: center;
-  display: flex;
-}
-header .cart {
-  height: 100%;
-  position: relative;
-}
-header .cart.full::before {
-  content: "";
-  background-color: red;
-  border-radius: 50%;
-  display: block;
-  height: 10px;
-  position: absolute;
-  top: 2px;
-  left: 50%;
-  transform: translateX(-50%);
-  width: 10px;
 }/*# sourceMappingURL=Header.css.map */

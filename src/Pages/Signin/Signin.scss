@@ -18,7 +18,7 @@
 
 .userName {
     font-size: $fontSize;
-    width: 190px;
+    width: 200px;
     outline: none;
     padding: 5px 10px;
     border-radius: 5px;
@@ -28,7 +28,7 @@
 
 .signin-button {
     @include buttonStyle;
-    width: 190px;
+    width: 200px;
 
     &:disabled {
         opacity: 0.6;

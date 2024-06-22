@@ -1,3 +1,7 @@
+.user-panel {
+  align-items: center;
+  display: flex;
+}
 .user-panel .signin {
   border: none;
   border-radius: 10px;
@@ -14,4 +18,40 @@
   border-radius: 5px;
   font-size: 16px;
   cursor: pointer;
+}
+.user-panel img {
+  height: 100%;
+}
+.user-panel img.avatar {
+  border: 1px solid #0a8989;
+  padding: 3px;
+  border-radius: 50%;
+  margin-right: 10px;
+}
+.user-panel .cart {
+  height: 100%;
+  position: relative;
+}
+.user-panel .cart__full--number {
+  display: none;
+}
+.user-panel .cart.cart__full {
+  position: relative;
+}
+.user-panel .cart.cart__full .cart__full--number {
+  background-color: #b10620;
+  border-radius: 50%;
+  color: #ffffff;
+  height: 20px;
+  width: 20px;
+  font-size: 10px;
+  font-weight: 600;
+  position: absolute;
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  justify-content: center;
+  padding: 0;
+  align-items: center;
 }/*# sourceMappingURL=UserPanel.css.map */
