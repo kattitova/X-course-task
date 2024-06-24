@@ -9,9 +9,9 @@ export default function Signin() {
     const user = useContext(Context) as contextType;
     const [buttonStatus, setButtonStatus] = useState(true);
     useEffect(() => {
-        if (user.userName.length === 4) {
+        if (user.userName.length >= 4 && user.userName.length < 16) {
             setButtonStatus(false);
-        }
+        } else setButtonStatus(true);
     }, [user.userName]);
 
     function setUser(e: React.ChangeEvent<HTMLInputElement>) {

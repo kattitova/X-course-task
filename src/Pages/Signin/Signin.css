@@ -35,7 +35,14 @@
   border-radius: 5px;
   font-size: 16px;
   cursor: pointer;
+  text-decoration: none;
   width: 200px;
+}
+.signin-button:hover {
+  background-color: #ECDF43;
+}
+.signin-button:disabled:hover {
+  background-color: #0a8989;
 }
 .signin-button:disabled {
   opacity: 0.6;

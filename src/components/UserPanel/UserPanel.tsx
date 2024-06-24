@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom';
 import {Context, contextType} from "../../context/Contex";
 import { OrderContext, contextType as orderContextType } from '../../context/OrderContext';
 
-import cartImg from "../../assets/images/cart.svg";
+import {ReactComponent as CartImg} from "../../assets/images/cart.svg";
 import avatarImg from "../../assets/images/avatar.png";
 import "./UserPanel.css";
 
@@ -32,7 +32,8 @@ export default function UserPanel() {
     return (
         <div className="user-panel">
             <Link to="/cart" className={ cartStatus }>
-                <img src={cartImg} alt="cart"/>
+                {/* <img src={cartImg} alt="cart"/> */}
+                <CartImg className='cart-img' />
                 <div className="cart__full--number">{ bookCount }</div>
             </Link>
             <Link className="signin" to="/signin">
@@ -40,8 +41,10 @@ export default function UserPanel() {
                     {user.isLogged ? "Sign-out" : "Sing-In"}
                 </button>
             </Link>
-            <img className="avatar" src={avatarImg} alt="avatar"/> 
-            <span>{user.isLogged ? user.userName : "Username"}</span>
+            <div className='user-info'>
+                <img className="avatar" src={avatarImg} alt="avatar"/> 
+                <span>{user.isLogged ? user.userName : "Username"}</span>
+            </div>
         </div>
     );
 }

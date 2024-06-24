@@ -21,7 +21,10 @@ export default function BookCard({book} : propsType) {
             <div className="book-info">
                 <div className="book-title">{book.title}</div>
                 <div className="book-author">{book.author}</div>
-                <div className="book-price">${book.price}</div>
+                <div className="book-footer">
+                    <div className="book-price">${book.price}</div>
+                    <Link className="book-view-button" to={`${book.id}`}>View</Link>
+                </div>
             </div>
         </div>
     );

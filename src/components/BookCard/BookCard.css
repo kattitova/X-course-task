@@ -56,8 +56,32 @@
   overflow: hidden;
   width: 100%;
 }
+.book-info .book-footer {
+  display: flex;
+  justify-content: space-between;
+  padding: 10px 10px 0;
+  align-items: center;
+  width: 100%;
+}
 .book-info .book-price {
   font-size: 1.1em;
   font-weight: 600;
   color: #0a8989;
+}
+.book-info .book-view-button {
+  background-color: #0a8989;
+  color: #ffffff;
+  padding: 5px 10px;
+  outline: none;
+  border: none;
+  border-radius: 5px;
+  font-size: 16px;
+  cursor: pointer;
+  text-decoration: none;
+}
+.book-info .book-view-button:hover {
+  background-color: #ECDF43;
+}
+.book-info .book-view-button:disabled:hover {
+  background-color: #0a8989;
 }/*# sourceMappingURL=BookCard.css.map */

@@ -1,13 +1,22 @@
 .user-panel {
   align-items: center;
   display: flex;
+  -moz-column-gap: 10px;
+       column-gap: 10px;
+}
+.user-panel img {
+  height: 100%;
 }
 .user-panel .signin {
+  border-left: solid 1px #C8C5BC;
+  border-right: solid 1px #C8C5BC;
+  padding: 5px 10px;
+}
+.user-panel .signin button {
   border: none;
-  border-radius: 10px;
+  border-radius: 5px;
   font-size: 16px;
   outline: none;
-  padding: 5px 10px;
 }
 .user-panel button {
   background-color: #0a8989;
@@ -18,11 +27,20 @@
   border-radius: 5px;
   font-size: 16px;
   cursor: pointer;
+  text-decoration: none;
 }
-.user-panel img {
+.user-panel button:hover {
+  background-color: #037878;
+}
+.user-panel button:disabled:hover {
+  background-color: #0a8989;
+}
+.user-panel .user-info {
+  display: flex;
+  align-items: center;
   height: 100%;
 }
-.user-panel img.avatar {
+.user-panel .user-info .avatar {
   border: 1px solid #0a8989;
   padding: 3px;
   border-radius: 50%;
@@ -31,6 +49,31 @@
 .user-panel .cart {
   height: 100%;
   position: relative;
+}
+.user-panel .cart::before {
+  content: "";
+  background-color: #0a8989;
+  bottom: -10px;
+  left: -10px;
+  position: absolute;
+  height: 3px;
+  width: 70px;
+  transition: height 0.5s ease-in-out;
+  z-index: 0;
+}
+.user-panel .cart:hover::before {
+  height: calc(100% + 20px);
+}
+.user-panel .cart:hover .cart-img path {
+  fill: white;
+}
+.user-panel .cart .cart-img {
+  height: 100%;
+  position: relative;
+  z-index: 1;
+}
+.user-panel .cart .cart-img path {
+  transition: fill 0.5s ease-in-out;
 }
 .user-panel .cart__full--number {
   display: none;
@@ -54,4 +97,5 @@
   justify-content: center;
   padding: 0;
   align-items: center;
+  z-index: 2;
 }/*# sourceMappingURL=UserPanel.css.map */

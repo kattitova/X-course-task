@@ -3,23 +3,36 @@
 .user-panel {
     align-items: center;
     display: flex;
+    column-gap: 10px;
+
+    img {
+        height: 100%;
+    }
 
     .signin {
-        border: none;
-        border-radius: 10px;
-        font-size: $fontSize;
-        outline: none;
+        border-left: solid 1px $bgColor;
+        border-right: solid 1px $bgColor;
         padding: 5px 10px;
+
+        button {
+            border: none;
+            border-radius: 5px;
+            font-size: $fontSize;
+            outline: none;
+            
+        }
     }
 
     button {
         @include buttonStyle;
     }
 
-    img {
+    .user-info {
+        display: flex;
+        align-items: center;
         height: 100%;
-    
-        &.avatar {
+ 
+        .avatar {
             border: 1px solid $activeColor;
             padding: 3px;
             border-radius: 50%;
@@ -30,6 +43,40 @@
     .cart {
         height: 100%;
         position: relative;
+
+        &::before {
+            content: "";
+            background-color: $activeColor;
+            bottom: -10px;
+            left: -10px;
+            position: absolute;
+            height: 3px;
+            width: 70px;
+            transition: height 0.5s ease-in-out;
+            z-index: 0;
+        }
+
+        &:hover {
+            &::before {
+                height: calc(100% + 20px);
+            }
+
+            .cart-img {
+                path {
+                    fill: white;
+                }
+            }
+        }
+
+        .cart-img {
+            height: 100%;
+            position: relative;
+            z-index: 1;
+
+            path {
+                transition: fill 0.5s ease-in-out;
+            }
+        }
 
         &__full--number {
             display: none;
@@ -52,20 +99,8 @@
                 transform: translateX(-50%);
                 @include settingFlexPadding(0, center);
                 align-items: center;
+                z-index: 2;
             }
-
-            // &::before {
-            //     content: "";
-            //     background-color: red;
-            //     border-radius: 50%;
-            //     display: block;
-            //     height: 10px;
-            //     position: absolute;
-            //     top: 2px;
-            //     left: 50%;
-            //     transform: translateX(-50%);
-            //     width: 10px;
-            // }
         }
     }
 }

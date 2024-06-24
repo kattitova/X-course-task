@@ -24,4 +24,13 @@ $heightFooter: 25px;
     border-radius: 5px;
     font-size: $fontSize;
     cursor: pointer; 
+    text-decoration: none;
+
+    &:hover {
+        background-color: #037878;
+    }
+
+    &:disabled:hover {
+        background-color: $activeColor;
+    }
 }

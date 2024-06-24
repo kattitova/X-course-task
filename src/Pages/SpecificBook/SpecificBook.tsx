@@ -1,11 +1,11 @@
 import { useParams } from "react-router-dom";
 import BookCountBlock from "../../components/BookCountBlock/BookCountBlock";
-import "./Book.css";
+import "./SpecificBook.css";
 import imgNotFound from "../../assets/images/imageNotFound.png";
 
 import {propsType, bookType} from "../../types/BookTypes";
 
-export default function Book({booksList} : propsType) {
+export default function SpecificBook({booksList} : propsType) {
     const { id } = useParams();
     const book = booksList.books.find(el => el.id === Number(id)) as bookType;
     

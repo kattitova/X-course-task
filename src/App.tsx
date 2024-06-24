@@ -6,7 +6,7 @@ import {
 import Header from './components/Header/Header';
 import Signin from './Pages/Signin/Signin';
 import BooksList from './Pages/BookList/BooksList';
-import Book from "./Pages/Book/Book";
+import SpecificBook from "./Pages/SpecificBook/SpecificBook";
 import Footer from "./components/Footer/Footer";
 import Cart from './Pages/Cart/Cart';
 import {Context} from "./context/Contex";
@@ -30,7 +30,7 @@ function App() {
             <Route path="/" element={<Navigate replace to="signin" />}/>
             <Route path="signin" element={<Signin />} />
             <Route path="books" element={<BooksList booksList={booksList} />} />
-            <Route path="books/:id" element={<Book booksList={booksList} />} />
+            <Route path="books/:id" element={<SpecificBook booksList={booksList} />} />
             <Route path="cart" element={<Cart booksList={booksList}/>}></Route>
           </Routes>
           <Footer />

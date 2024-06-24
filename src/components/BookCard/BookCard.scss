@@ -60,9 +60,19 @@
         width: 100%;
     }
 
+    .book-footer {
+        @include settingFlexPadding(10px 10px 0, space-between);
+        align-items: center;
+        width: 100%;
+    }
+
     .book-price {
         font-size: 1.1em;
         font-weight: 600;
         color: $activeColor;
+    }
+
+    .book-view-button {
+        @include buttonStyle;
     }
 }

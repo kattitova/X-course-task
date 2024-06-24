@@ -31,7 +31,6 @@ export default function BookList({booksList} : propsType) {
                 default: return inputValue !== "" ? bookTitleInclude : true;
             };
         };
-
         setFilteredBookList(books.filter(filterData));
     }, [selectValue, inputValue]);
 
@@ -40,7 +39,6 @@ export default function BookList({booksList} : propsType) {
             <BookCard book={book} key={book.id}/>
         );
     });
-    console.log(list);
     
     return (
         <div className="books-list-wrapper">
