@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import {
-  BrowserRouter, Routes, Route, Navigate
+  BrowserRouter, Routes, Route, Navigate, redirect
 } from "react-router-dom";
 
 import Header from './components/Header/Header';
@@ -19,6 +19,14 @@ function App() {
   const [userName, setUserName] = useState("");
   const [isLogged, setLogged] = useState(false);
   const [orderBooks, setBooks] = useState<Array<arrayBooksType>>([]);
+
+  const redirectWithoutAuth = (component: JSX.Element) => {
+    return (
+      <>
+        {isLogged ? component : <Navigate to="/signin" />}
+      </>
+    );
+  }
   
   return (
     <Context.Provider value = {{userName, setUserName, isLogged, setLogged}}>
@@ -29,9 +37,9 @@ function App() {
           <Routes>
             <Route path="/" element={<Navigate replace to="signin" />}/>
             <Route path="signin" element={<Signin />} />
-            <Route path="books" element={<BooksList booksList={booksList} />} />
-            <Route path="books/:id" element={<SpecificBook booksList={booksList} />} />
-            <Route path="cart" element={<Cart booksList={booksList}/>}></Route>
+            <Route path="books" element={redirectWithoutAuth(<BooksList booksList={booksList} />)} />
+            <Route path="books/:id" element={redirectWithoutAuth(<SpecificBook booksList={booksList} />)} />
+            <Route path="cart" element={redirectWithoutAuth(<Cart booksList={booksList}/>)} />
           </Routes>
           <Footer />
           </div>

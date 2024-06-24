@@ -34,6 +34,7 @@ export default function Cart({booksList} : propsType) {
     const Cart = () => {
         return (
             <>
+                <button className="purshase">Purchase</button>
                 <div className="cart__item cart__item--title">
                     <p>Book</p>
                     <p>Title</p>
