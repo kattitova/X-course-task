@@ -2,11 +2,11 @@ import { useContext } from "react";
 import { OrderContext, contextType } from "../../context/OrderContext";
 import CartItem from "../../components/CartItem/CartItem";
 
-import {propsType} from "../../types/BookTypes";
+import "./Cart.css";
 
-export default function Cart({booksList} : propsType) {
+export default function Cart() {
     const order = useContext(OrderContext) as contextType;
-    const { orderBooks } = order;
+    const { orderBooks, setBooks, booksList } = order;
 
     let totalAmount = 0; 
 
@@ -31,27 +31,34 @@ export default function Cart({booksList} : propsType) {
         );
     };
 
+    const purchaseClickHandle = () => {
+        //delete all books from cart
+        setBooks([]);
+    }
+
     const Cart = () => {
         return (
-            <>
-                <button className="purshase">Purchase</button>
-                <div className="cart__item cart__item--title">
-                    <p>Book</p>
-                    <p>Title</p>
-                    <p>Price</p>
-                    <p>Count</p>
-                    <p>Total price</p>
-                    <p></p>
+            <div className="cart__wrapper">
+                <button className="cart__purshaseButton" onClick = {purchaseClickHandle}>Purchase</button>
+                <div className="cart__table">
+                    <div className="cart__item cart__item--title">
+                        <p>Book</p>
+                        <p>Title</p>
+                        <p>Price</p>
+                        <p>Count</p>
+                        <p>Total price</p>
+                        <p></p>
+                    </div>
+                    { orderList }
                 </div>
-                { orderList }
-                Total Amount: ${ Number(totalAmount.toFixed(2)) } 
-            </>
+                <div className="cart__total">Total Amount: ${ Number(totalAmount.toFixed(2)) } </div>
+            </div>
         );
     };
 
     return (
-        <div>
+        <>
             { orderBooks.length ? <Cart /> : <EmptyCart /> }
-        </div>
+        </>
     );
 }

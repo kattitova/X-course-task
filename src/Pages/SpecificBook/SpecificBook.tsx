@@ -1,18 +1,26 @@
+import { useContext } from "react";
 import { useParams } from "react-router-dom";
 import BookCountBlock from "../../components/BookCountBlock/BookCountBlock";
+import BookImage from "../../components/BookImage/BookImage";
 import "./SpecificBook.css";
 import imgNotFound from "../../assets/images/imageNotFound.png";
 
-import {propsType, bookType} from "../../types/BookTypes";
+import { OrderContext, contextType, bookType } from "../../context/OrderContext";
 
-export default function SpecificBook({booksList} : propsType) {
+export default function SpecificBook() {
+    const {booksList} = useContext(OrderContext) as contextType;
+    
     const { id } = useParams();
     const book = booksList.books.find(el => el.id === Number(id)) as bookType;
+
+    const onImgError = (e: React.SyntheticEvent<HTMLImageElement>) => {
+        e.currentTarget.src = imgNotFound;
+    }
     
     return (
         <div className="single-book">
             <div className="single-book__image">
-                <img src={book.image || imgNotFound} alt={book.title}/>
+                <BookImage src={book.image} title={book.title} />
             </div>
             <div className="single-book__info">
                 <h2>{book.title}</h2>

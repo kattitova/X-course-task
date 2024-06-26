@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 import { OrderContext, contextType } from "../../context/OrderContext";
 import { FaRegTrashAlt } from 'react-icons/fa';
 import "./CartItem.css";
-import noImage from "../../assets/images/imageNotFound.png";
+import BookImage from "../BookImage/BookImage";
 
 import { bookType } from "../../types/BookTypes";
 
@@ -24,7 +24,7 @@ export default function CartItem({ book, count } : propsType) {
 
     return (
         <div className="cart__item">
-            <img className="cart__item--image" src={ book.image || noImage } alt={ book.title } />
+            <BookImage imgClass="cart__item--image" src={book.image} title={book.title} />
             <p><Link to={`/books/${book.id}`}>{ book.title }</Link></p>
             <p>{ book.price }</p>
             <p>{ count }</p>

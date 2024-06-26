@@ -1,0 +1,24 @@
+@import "../../variables.scss";
+
+.cart__wrapper {
+    display: flex;
+    padding: 50px 100px;
+    flex-direction: column;
+    width: 100%;
+}
+
+.cart__purshaseButton {
+    @include buttonStyle;
+    align-self: end;
+}
+
+.cart__table {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.cart__total {
+    align-self: end;
+    font-weight: 600;
+}

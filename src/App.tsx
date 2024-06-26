@@ -30,16 +30,16 @@ function App() {
   
   return (
     <Context.Provider value = {{userName, setUserName, isLogged, setLogged}}>
-      <OrderContext.Provider value = {{orderBooks, setBooks}}>
+      <OrderContext.Provider value = {{orderBooks, setBooks, booksList}}>
         <BrowserRouter>
           <div className="App">
             <Header />
           <Routes>
             <Route path="/" element={<Navigate replace to="signin" />}/>
             <Route path="signin" element={<Signin />} />
-            <Route path="books" element={redirectWithoutAuth(<BooksList booksList={booksList} />)} />
-            <Route path="books/:id" element={redirectWithoutAuth(<SpecificBook booksList={booksList} />)} />
-            <Route path="cart" element={redirectWithoutAuth(<Cart booksList={booksList}/>)} />
+            <Route path="books" element={redirectWithoutAuth(<BooksList />)} />
+            <Route path="books/:id" element={redirectWithoutAuth(<SpecificBook />)} />
+            <Route path="cart" element={redirectWithoutAuth(<Cart />)} />
           </Routes>
           <Footer />
           </div>

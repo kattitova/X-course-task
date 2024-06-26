@@ -21,3 +21,14 @@ body {
     @include settingFlexPadding(0, space-between);
     flex-direction: column;
 }
+
+a {
+    color: #000000;
+    text-decoration: none;
+    cursor: pointer;
+
+    &:hover {
+        color: $activeColor;
+        font-weight: 600;
+    }
+}

@@ -1,6 +1,7 @@
 import {Link} from "react-router-dom";
 import imgNotFound from "../../assets/images/imageNotFound.png";
 import AddToCart from "../AddToCart/AddToCart";
+import BookImage from "../BookImage/BookImage";
 import "./BookCard.css";
 
 import { bookType } from "../../types/BookTypes";
@@ -8,13 +9,17 @@ import { bookType } from "../../types/BookTypes";
 type propsType = {
     book: bookType,
 };
+
+const onImgError = (e: React.SyntheticEvent<HTMLImageElement>) => {
+    e.currentTarget.src = imgNotFound;
+}
     
 export default function BookCard({book} : propsType) {
     return (
         <div className="book-wrapper">
             <div className="book-image-wrapper">
                 <Link to={`${book.id}`}>
-                    <img className="book-image" src={book.image || imgNotFound} alt={book.title} />
+                    <BookImage imgClass = "book-image" src={book.image} title={book.title} />
                 </Link>
                 <AddToCart bookID={book.id} count={1}/>
             </div>

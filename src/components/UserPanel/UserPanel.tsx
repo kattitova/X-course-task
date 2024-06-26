@@ -32,7 +32,6 @@ export default function UserPanel() {
     return (
         <div className="user-panel">
             <Link to="/cart" className={ cartStatus }>
-                {/* <img src={cartImg} alt="cart"/> */}
                 <CartImg className='cart-img' />
                 <div className="cart__full--number">{ bookCount }</div>
             </Link>

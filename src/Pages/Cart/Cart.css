@@ -1,1 +1,36 @@
-/*# sourceMappingURL=Cart.css.map */
+.cart__wrapper {
+  display: flex;
+  padding: 50px 100px;
+  flex-direction: column;
+  width: 100%;
+}
+
+.cart__purshaseButton {
+  background-color: #0a8989;
+  color: #ffffff;
+  padding: 5px 10px;
+  outline: none;
+  border: none;
+  border-radius: 5px;
+  font-size: 16px;
+  cursor: pointer;
+  text-decoration: none;
+  align-self: end;
+}
+.cart__purshaseButton:hover {
+  background-color: #037878;
+}
+.cart__purshaseButton:disabled:hover {
+  background-color: #0a8989;
+}
+
+.cart__table {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.cart__total {
+  align-self: end;
+  font-weight: 600;
+}/*# sourceMappingURL=Cart.css.map */

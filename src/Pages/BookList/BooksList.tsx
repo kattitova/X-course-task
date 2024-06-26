@@ -1,12 +1,14 @@
-import { useEffect, useState } from "react";
+import { useContext, useEffect, useState } from "react";
 import BookCard from "../../components/BookCard/BookCard";
 import SearchBook from "../../components/SearchBook/SearchBook";
 import SortByPrice from "../../components/SortByPrice/SortByPrice";
 import "./BooksList.css";
 
-import {propsType, bookType} from "../../types/BookTypes";
+import { OrderContext, contextType, bookType } from "../../context/OrderContext";
 
-export default function BookList({booksList} : propsType) {
+export default function BookList() {
+    const {booksList} = useContext(OrderContext) as contextType;
+
     const [inputValue, setInputValue] = useState("");
     const searchHandle = (e: React.ChangeEvent<HTMLInputElement>) => {
         setInputValue(e.currentTarget.value.toLowerCase());
