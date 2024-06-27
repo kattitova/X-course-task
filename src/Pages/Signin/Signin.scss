@@ -35,3 +35,17 @@
         cursor: default;
     }
 }
+
+@media screen and (max-width: 320px){
+    a, .signin-button {
+        width: 100%;
+    }
+
+    .userName {
+        width: 100%;
+    }
+
+    .signin-avatar {
+        width: 200px;
+    }
+}

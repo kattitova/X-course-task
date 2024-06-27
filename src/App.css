@@ -30,4 +30,14 @@ a {
 a:hover {
   color: #0a8989;
   font-weight: 600;
+}
+
+@media screen and (max-width: 320px) {
+  body {
+    padding: 0;
+  }
+  .App {
+    min-height: 100vh;
+    padding: 0 8px;
+  }
 }/*# sourceMappingURL=App.css.map */

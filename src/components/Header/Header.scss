@@ -33,3 +33,14 @@ header {
         }
     }
 }
+
+@media screen and (max-width: 320px) {
+    header {
+        padding: 10px;
+        justify-content: center;
+
+        .logo-wrapper .logo-text {
+            font-size: 1em;
+        }
+    }
+}

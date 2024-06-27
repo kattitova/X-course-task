@@ -11,3 +11,9 @@ footer {
         color: #646464;
     }
 }
+
+@media screen and (max-width: 320px) {
+    footer {
+        font-size: 0.8em;
+    }
+}

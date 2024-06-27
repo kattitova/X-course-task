@@ -26,4 +26,14 @@ header .logo-wrapper .logo-text {
 header .logo-text.author::before {
   content: "/";
   margin: 0 10px;
+}
+
+@media screen and (max-width: 320px) {
+  header {
+    padding: 10px;
+    justify-content: center;
+  }
+  header .logo-wrapper .logo-text {
+    font-size: 1em;
+  }
 }/*# sourceMappingURL=Header.css.map */

@@ -32,3 +32,14 @@ a {
         font-weight: 600;
     }
 }
+
+@media screen and (max-width: 320px) {
+    body {
+        padding: 0;
+    }
+
+    .App {
+        min-height: 100vh;
+        padding: 0 8px;
+    }
+}
