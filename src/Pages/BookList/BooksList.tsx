@@ -4,10 +4,10 @@ import SearchBook from "../../components/SearchBook/SearchBook";
 import SortByPrice from "../../components/SortByPrice/SortByPrice";
 import "./BooksList.css";
 
-import { OrderContext, contextType, bookType } from "../../context/OrderContext";
+import { BooksContext, booksContextType, bookType } from "../../context/BooksContext";
 
 export default function BookList() {
-    const {booksList} = useContext(OrderContext) as contextType;
+    const {booksList} = useContext(BooksContext) as booksContextType;
 
     const [inputValue, setInputValue] = useState("");
     const searchHandle = (e: React.ChangeEvent<HTMLInputElement>) => {

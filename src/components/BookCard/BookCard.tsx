@@ -4,7 +4,7 @@ import AddToCart from "../AddToCart/AddToCart";
 import BookImage from "../BookImage/BookImage";
 import "./BookCard.css";
 
-import { bookType } from "../../types/BookTypes";
+import { bookType } from "../../context/BooksContext";
 
 type propsType = {
     book: bookType,

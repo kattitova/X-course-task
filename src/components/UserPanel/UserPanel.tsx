@@ -1,15 +1,15 @@
 import { useContext, useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
-import {Context, contextType} from "../../context/Contex";
-import { OrderContext, contextType as orderContextType } from '../../context/OrderContext';
+import { UserContext, userContextType} from "../../context/UserContex";
+import { BooksContext, booksContextType } from '../../context/BooksContext';
 
 import {ReactComponent as CartImg} from "../../assets/images/cart.svg";
 import avatarImg from "../../assets/images/avatar.png";
 import "./UserPanel.css";
 
 export default function UserPanel() {
-    const user = useContext(Context) as contextType;
-    const order = useContext(OrderContext) as orderContextType;
+    const user = useContext(UserContext) as userContextType;
+    const order = useContext(BooksContext) as booksContextType;
 
     const logOut = () => {
         user.setLogged(false);

@@ -1,11 +1,11 @@
 import { useContext } from "react";
-import { OrderContext, contextType } from "../../context/OrderContext";
+import { BooksContext, booksContextType } from "../../context/BooksContext";
 import CartItem from "../../components/CartItem/CartItem";
 
 import "./Cart.css";
 
 export default function Cart() {
-    const order = useContext(OrderContext) as contextType;
+    const order = useContext(BooksContext) as booksContextType;
     const { orderBooks, setBooks, booksList } = order;
 
     let totalAmount = 0; 

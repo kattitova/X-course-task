@@ -5,10 +5,10 @@ import BookImage from "../../components/BookImage/BookImage";
 import "./SpecificBook.css";
 import imgNotFound from "../../assets/images/imageNotFound.png";
 
-import { OrderContext, contextType, bookType } from "../../context/OrderContext";
+import { BooksContext, booksContextType, bookType } from "../../context/BooksContext";
 
 export default function SpecificBook() {
-    const {booksList} = useContext(OrderContext) as contextType;
+    const {booksList} = useContext(BooksContext) as booksContextType;
     
     const { id } = useParams();
     const book = booksList.books.find(el => el.id === Number(id)) as bookType;

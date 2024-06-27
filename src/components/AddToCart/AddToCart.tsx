@@ -1,6 +1,6 @@
 import { useState, useContext } from "react";
 import { FaCheck } from 'react-icons/fa';
-import { OrderContext, contextType } from "../../context/OrderContext";
+import { BooksContext, booksContextType } from "../../context/BooksContext";
 
 import "./AddToCart.css";
 
@@ -10,7 +10,7 @@ type propsType = {
 }
 
 export default function AddToCart({bookID, count}:propsType) {
-    const order = useContext(OrderContext) as contextType;
+    const order = useContext(BooksContext) as booksContextType;
 
     let [cartButton, setButtonStatus] = useState(false);
 

@@ -1,10 +1,12 @@
 import React from "react";
 
-export type contextType = {
+export type booksContextType = {
     orderBooks: Array<arrayBooksType>,
-    setBooks: React.Dispatch<React.SetStateAction<contextType["orderBooks"]>>,
+    setBooks: React.Dispatch<React.SetStateAction<booksContextType["orderBooks"]>>,
     booksList: bookListType,
 }
+
+export const BooksContext = React.createContext<booksContextType | null>(null);
 
 export type arrayBooksType = {
     bookID: number,
@@ -14,12 +16,6 @@ export type arrayBooksType = {
 export type bookListType = {
     books: Array<bookType>,
 }
-
-export type propsType = {
-    booksList: {
-        books: Array<bookType>,
-    },
-};
 
 export type bookType = {
     id: number,
@@ -33,5 +29,3 @@ export type bookType = {
     shortDescription: string,
     description: string,
 };
-
-export const OrderContext = React.createContext<contextType | null>(null);

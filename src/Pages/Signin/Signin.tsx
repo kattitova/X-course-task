@@ -1,12 +1,14 @@
 import { useContext, useEffect, useState } from "react";
 import { Link } from "react-router-dom";
-import {Context, contextType} from "../../context/Contex";
+import { UserContext, userContextType} from "../../context/UserContex";
 
 import nonAvatar from "../../assets/images/avatar.png"
 import "./Signin.css";
 
 export default function Signin() {
-    const user = useContext(Context) as contextType;
+    const user = useContext(UserContext) as userContextType;
+    
+    //керування доступністу кнопки Signin в заложності від кількості символів логіна
     const [buttonStatus, setButtonStatus] = useState(true);
     useEffect(() => {
         if (user.userName.length >= 4 && user.userName.length < 16) {

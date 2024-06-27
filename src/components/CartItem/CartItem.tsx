@@ -1,11 +1,9 @@
 import { useContext, useEffect } from "react";
 import { Link } from "react-router-dom";
-import { OrderContext, contextType } from "../../context/OrderContext";
+import { BooksContext, booksContextType, bookType } from "../../context/BooksContext";
 import { FaRegTrashAlt } from 'react-icons/fa';
 import "./CartItem.css";
 import BookImage from "../BookImage/BookImage";
-
-import { bookType } from "../../types/BookTypes";
 
 type propsType = {
     book: bookType,
@@ -13,7 +11,7 @@ type propsType = {
 }
 
 export default function CartItem({ book, count } : propsType) {
-    const order = useContext(OrderContext) as contextType;
+    const order = useContext(BooksContext) as booksContextType;
     const deleteItemHandle = (id: number) => {
         // delete book from cart
         order.setBooks(prevState => {
