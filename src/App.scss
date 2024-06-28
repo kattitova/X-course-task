@@ -1,0 +1,45 @@
+@import "./variables";
+@import url('https://fonts.googleapis.com/css2?family=Nunito+Sans');
+
+* {
+    box-sizing: border-box;
+    font-family: "Nunito Sans", sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    background-color: $bgColor;
+    padding: $bodyVerticalPadding 50px;
+}
+
+.App {
+    background-color: $wrapperColor;
+    border: 8px solid $borderColor;
+    border-radius: 5px;
+    min-height: calc(100vh - 2*$bodyVerticalPadding);
+    @include settingFlexPadding(0, space-between);
+    flex-direction: column;
+}
+
+a {
+    color: #000000;
+    text-decoration: none;
+    cursor: pointer;
+
+    &:hover {
+        color: $activeColor;
+        font-weight: 600;
+    }
+}
+
+@media screen and (max-width: 320px) {
+    body {
+        padding: 0;
+    }
+
+    .App {
+        min-height: 100vh;
+        padding: 0 8px;
+    }
+}

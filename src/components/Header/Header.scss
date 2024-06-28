@@ -1,0 +1,46 @@
+@import "../../variables";
+
+header {
+    @include settingFlexPadding($sectionPadding, space-between);
+    height: 70px;
+    width: 100%;
+    position: relative;
+
+    &::after {
+        content: "";
+        border-bottom: 1px solid $bgColor;
+        position: absolute;
+        bottom: 0;
+        width: 98%;
+        left: 50%;
+        transform: translateX(-50%);
+    }
+
+    .logo-wrapper {
+        align-self: center;
+        display: flex;
+
+        .logo-text {
+            font-size: 22px;
+            font-weight: 600;
+        }
+    }
+
+    .logo-text.author {
+        &::before {
+            content: "/";
+            margin: 0 10px;
+        }
+    }
+}
+
+@media screen and (max-width: 320px) {
+    header {
+        padding: 10px;
+        justify-content: center;
+
+        .logo-wrapper .logo-text {
+            font-size: 1em;
+        }
+    }
+}

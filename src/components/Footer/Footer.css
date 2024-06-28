@@ -1,0 +1,16 @@
+footer {
+  height: 25px;
+  width: 100%;
+  text-align: center;
+  font-size: 0.9em;
+  color: #646464;
+}
+footer a {
+  color: #646464;
+}
+
+@media screen and (max-width: 320px) {
+  footer {
+    font-size: 0.8em;
+  }
+}/*# sourceMappingURL=Footer.css.map */

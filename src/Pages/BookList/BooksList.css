@@ -1,0 +1,13 @@
+.books-list-wrapper {
+  padding: 20px 40px;
+}
+
+.books-list {
+  display: flex;
+  justify-content: space-between;
+  padding: 20px 0;
+  flex-wrap: wrap;
+  -moz-column-gap: 10px;
+       column-gap: 10px;
+  row-gap: 30px;
+}/*# sourceMappingURL=BooksList.css.map */

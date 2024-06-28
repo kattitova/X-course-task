@@ -1,0 +1,87 @@
+.book-wrapper {
+  border: 1px solid #FDFCF7;
+  border-radius: 2px;
+  overflow: hidden;
+  padding: 20px 0;
+  width: calc((100% - 40px) / 4);
+  position: relative;
+}
+.book-wrapper::before {
+  content: " ";
+  display: block;
+  height: 100%;
+  position: absolute;
+  top: 50%;
+  width: 200%;
+  z-index: 0;
+  transform: skewY(14deg);
+  transform-origin: 0px 0px 0px;
+  background-color: #e5e3df;
+}
+.book-wrapper:hover {
+  border-color: #0a8989;
+}
+
+.book-image {
+  box-shadow: -3px 5px 7px lightgray;
+  margin: 20px 30px;
+  width: calc(100% - 60px);
+  aspect-ratio: 3/4;
+}
+
+.book-image-wrapper {
+  position: relative;
+}
+
+.book-info {
+  position: relative;
+  display: flex;
+  justify-content: space-around;
+  padding: 10px 10px 0 10px;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+.book-info .book-title {
+  font-weight: 600;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  overflow: hidden;
+  width: 100%;
+}
+.book-info .book-author {
+  font-size: 0.9em;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  overflow: hidden;
+  width: 100%;
+}
+.book-info .book-footer {
+  display: flex;
+  justify-content: space-between;
+  padding: 10px 10px 0;
+  align-items: center;
+  width: 100%;
+}
+.book-info .book-price {
+  font-size: 1.1em;
+  font-weight: 600;
+  color: #0a8989;
+}
+.book-info .book-view-button {
+  background-color: #0a8989;
+  color: #ffffff;
+  padding: 5px 10px;
+  outline: none;
+  border: none;
+  border-radius: 5px;
+  font-size: 16px;
+  cursor: pointer;
+  text-decoration: none;
+}
+.book-info .book-view-button:hover {
+  background-color: #037878;
+}
+.book-info .book-view-button:disabled:hover {
+  background-color: #0a8989;
+}/*# sourceMappingURL=BookCard.css.map */

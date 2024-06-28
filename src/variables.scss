@@ -1,0 +1,36 @@
+$fontSize: 16px;
+$sectionPadding: 10px 20px;
+$bgColor: #C8C5BC;
+$wrapperColor: #F0EEE2;
+$borderColor: #D7D4CD;
+$pageColor: #FDFCF7;
+$activeColor: #0a8989;
+$bodyVerticalPadding: 60px;
+$heightHeader: 70px;
+$heightFooter: 25px;
+
+@mixin settingFlexPadding($padding, $jc) {
+    display: flex;
+    justify-content: $jc;
+    padding: $padding;
+}
+
+@mixin buttonStyle {
+    background-color: $activeColor;
+    color: #ffffff;
+    padding: 5px 10px;
+    outline: none;
+    border: none;
+    border-radius: 5px;
+    font-size: $fontSize;
+    cursor: pointer; 
+    text-decoration: none;
+
+    &:hover {
+        background-color: #037878;
+    }
+
+    &:disabled:hover {
+        background-color: $activeColor;
+    }
+}

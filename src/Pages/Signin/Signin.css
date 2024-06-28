@@ -1,0 +1,63 @@
+.signin-wrapper {
+  display: flex;
+  justify-content: center;
+  padding: 0;
+  align-items: center;
+  flex-direction: column;
+  row-gap: 10px;
+}
+
+.signin-avatar {
+  width: 160px;
+  height: auto;
+  border: 1px solid #0a8989;
+  border-radius: 50%;
+  padding: 5px;
+  margin-bottom: 15px;
+}
+
+.userName {
+  font-size: 16px;
+  width: 200px;
+  outline: none;
+  padding: 5px 10px;
+  border-radius: 5px;
+  border: 1px solid #0a8989;
+  text-align: center;
+}
+
+.signin-button {
+  background-color: #0a8989;
+  color: #ffffff;
+  padding: 5px 10px;
+  outline: none;
+  border: none;
+  border-radius: 5px;
+  font-size: 16px;
+  cursor: pointer;
+  text-decoration: none;
+  width: 200px;
+}
+.signin-button:hover {
+  background-color: #037878;
+}
+.signin-button:disabled:hover {
+  background-color: #0a8989;
+}
+.signin-button:disabled {
+  opacity: 0.6;
+  cursor: default;
+}
+
+@media screen and (max-width: 320px) {
+  a,
+  .signin-button {
+    width: 100%;
+  }
+  .userName {
+    width: 100%;
+  }
+  .signin-avatar {
+    width: 200px;
+  }
+}/*# sourceMappingURL=Signin.css.map */

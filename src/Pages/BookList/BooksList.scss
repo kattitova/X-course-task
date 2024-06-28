@@ -1,0 +1,12 @@
+@import "../../variables";
+
+.books-list-wrapper {
+    padding: 20px 40px;
+}
+
+.books-list {
+    @include settingFlexPadding(20px 0, space-between);
+    flex-wrap: wrap;
+    column-gap: 10px;
+    row-gap: 30px;
+}

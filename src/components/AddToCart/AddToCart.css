@@ -1,0 +1,34 @@
+@charset "UTF-8";
+/* блок для підняття панелькі Add to cart*/
+.parent {
+  width: 100%;
+  height: 50px;
+  perspective: 300px;
+  color: white;
+  position: absolute;
+  bottom: 0;
+  cursor: pointer;
+}
+
+.book-wrapper:hover .block {
+  transform: rotateX(0deg);
+  transform-origin: bottom;
+  transition: 0.7s linear transform;
+}
+
+.block {
+  display: flex;
+  justify-content: center;
+  padding: 0;
+  align-items: center;
+  background-color: #0a8989;
+  width: 100%;
+  height: 100%;
+  transform: rotateX(95deg);
+  transform-origin: bottom;
+  transition: 0.7s linear transform;
+  font-size: 14px;
+  font-weight: 600;
+  -moz-column-gap: 7px;
+       column-gap: 7px;
+}/*# sourceMappingURL=AddToCart.css.map */

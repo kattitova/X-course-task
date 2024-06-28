@@ -1,0 +1,33 @@
+@import "../../variables";
+
+/* блок для підняття панелькі Add to cart*/
+.parent {
+    width: 100%;
+    height: 50px;
+    perspective: 300px;
+    color: white;
+    position: absolute;
+    bottom: 0;
+    cursor: pointer;
+}
+
+.book-wrapper:hover .block {
+    transform: rotateX(0deg);
+    transform-origin: bottom;  
+    transition: 0.7s linear transform;
+    }
+
+  
+.block {
+    @include settingFlexPadding(0, center);
+    align-items: center;
+    background-color: $activeColor;
+    width: 100%;
+    height: 100%;
+    transform: rotateX(95deg);
+    transform-origin: bottom;
+    transition: 0.7s linear transform;
+    font-size: 14px;
+    font-weight: 600;
+    column-gap: 7px;
+}

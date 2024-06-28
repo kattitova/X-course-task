@@ -1,0 +1,39 @@
+header {
+  display: flex;
+  justify-content: space-between;
+  padding: 10px 20px;
+  height: 70px;
+  width: 100%;
+  position: relative;
+}
+header::after {
+  content: "";
+  border-bottom: 1px solid #C8C5BC;
+  position: absolute;
+  bottom: 0;
+  width: 98%;
+  left: 50%;
+  transform: translateX(-50%);
+}
+header .logo-wrapper {
+  align-self: center;
+  display: flex;
+}
+header .logo-wrapper .logo-text {
+  font-size: 22px;
+  font-weight: 600;
+}
+header .logo-text.author::before {
+  content: "/";
+  margin: 0 10px;
+}
+
+@media screen and (max-width: 320px) {
+  header {
+    padding: 10px;
+    justify-content: center;
+  }
+  header .logo-wrapper .logo-text {
+    font-size: 1em;
+  }
+}/*# sourceMappingURL=Header.css.map */
