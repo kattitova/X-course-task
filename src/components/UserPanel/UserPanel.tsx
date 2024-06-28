@@ -9,25 +9,26 @@ import "./UserPanel.css";
 
 export default function UserPanel() {
     const user = useContext(UserContext) as userContextType;
-    const order = useContext(BooksContext) as booksContextType;
+    const {orderBooks, setBooks} = useContext(BooksContext) as booksContextType;
 
     const logOut = () => {
         user.setLogged(false);
         user.setUserName("");
-        order.setBooks([]);
+        setBooks([]);
     };
 
     const [cartStatus, setCartStatus] = useState("cart");
     const [bookCount, setBookCount] = useState(0);
 
     useEffect(() => {
-        if (order.orderBooks.length) {
+        console.log("fire");
+        if (orderBooks.length) {
             setCartStatus("cart cart__full");
-            const totalBookCount = order.orderBooks.reduce((sum, book) => sum + book.count, 0);
+            const totalBookCount = orderBooks.reduce((sum, book) => sum + book.count, 0);
             setBookCount(totalBookCount);
         }
         else setCartStatus("cart");
-    }, [order.orderBooks]);
+    }, [orderBooks]);
     
     return (
         <div className="user-panel">

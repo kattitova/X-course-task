@@ -10,18 +10,18 @@ type propsType = {
 }
 
 export default function AddToCart({bookID, count}:propsType) {
-    const order = useContext(BooksContext) as booksContextType;
+    const {setBooks} = useContext(BooksContext) as booksContextType;
 
     let [cartButton, setButtonStatus] = useState(false);
 
     const addToCartHandler = () => {
         setButtonStatus(true);
 
-        order.setBooks(prevState => {
+        setBooks(prevState => {
             const bookIndex = prevState.findIndex(book => book.bookID === bookID);
-            if (bookIndex > 0) {
+            if (bookIndex >= 0) {
                 prevState[bookIndex].count += count;
-                return prevState;
+                return [...prevState];
             } else return [...prevState, {bookID: bookID, count: count}]
         });
     }

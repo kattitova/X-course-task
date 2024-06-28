@@ -50,7 +50,8 @@
 }
 
 @media screen and (max-width: 320px) {
-  a, .signin-button {
+  a,
+  .signin-button {
     width: 100%;
   }
   .userName {

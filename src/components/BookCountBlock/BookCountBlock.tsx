@@ -17,7 +17,8 @@ export default function BookCountBlock({price, bookID} : BookPropsType) {
     const countChangeHandle = (e: React.ChangeEvent<HTMLInputElement>) => {
         const inputValue = Number(e.currentTarget.value);
         setCount(() => {
-            if (inputValue < 1) return 1;
+            if (Number.isNaN(inputValue)) return 1;
+            else if (inputValue < 1) return 1;
             else if (inputValue > 42) return 42;
             else return inputValue;
         });
