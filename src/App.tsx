@@ -52,7 +52,7 @@ function App() {
   return (
     <UserContext.Provider value = {{userName, setUserName, isLogged, setLogged}}>
       <BooksContext.Provider value = {{orderBooks, setBooks, booksList}}>
-        <BrowserRouter>
+        <BrowserRouter basename="X-course-task">
           <div className="App">
             <Header />
           <Routes>
