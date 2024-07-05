@@ -1,7 +1,7 @@
 import { useContext, useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
 import { UserContext, userContextType} from "../../context/UserContex";
-import { BooksContext, booksContextType } from '../../context/BooksContext';
+import { BooksContext, arrayBooksType, booksContextType } from '../../context/BooksContext';
 
 import {ReactComponent as CartImg} from "../../assets/images/cart.svg";
 import avatarImg from "../../assets/images/avatar.png";
@@ -9,22 +9,21 @@ import "./UserPanel.css";
 
 export default function UserPanel() {
     const user = useContext(UserContext) as userContextType;
-    const {orderBooks, setBooks} = useContext(BooksContext) as booksContextType;
+    const {orderBooks} = useContext(BooksContext) as booksContextType;
+
+    //const {setLogOut} = useLocalStorage("bookStoreUser", {userName: user.userName, isLogged: user.isLogged, orderBooks: orderBooks});
 
     const logOut = () => {
         user.setLogged(false);
-        user.setUserName("");
-        setBooks([]);
     };
 
     const [cartStatus, setCartStatus] = useState("cart");
     const [bookCount, setBookCount] = useState(0);
 
     useEffect(() => {
-        console.log("fire");
         if (orderBooks.length) {
             setCartStatus("cart cart__full");
-            const totalBookCount = orderBooks.reduce((sum, book) => sum + book.count, 0);
+            const totalBookCount = (orderBooks as Array<arrayBooksType>).reduce((sum: number, book: arrayBooksType) => sum + book.count, 0);
             setBookCount(totalBookCount);
         }
         else setCartStatus("cart");

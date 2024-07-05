@@ -36,7 +36,7 @@ export default function Cart() {
         setBooks([]);
     }
 
-    const Cart = () => {
+    const FullCart = () => {
         return (
             <div className="cart__wrapper">
                 <button className="cart__purshaseButton" onClick = {purchaseClickHandle}>Purchase</button>
@@ -58,7 +58,7 @@ export default function Cart() {
 
     return (
         <>
-            { orderBooks.length ? <Cart /> : <EmptyCart /> }
+            { orderBooks.length ? <FullCart /> : <EmptyCart /> }
         </>
     );
 }

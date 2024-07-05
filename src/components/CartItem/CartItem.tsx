@@ -1,4 +1,4 @@
-import { useContext, useEffect } from "react";
+import { useContext } from "react";
 import { Link } from "react-router-dom";
 import { BooksContext, booksContextType, bookType } from "../../context/BooksContext";
 import { FaRegTrashAlt } from 'react-icons/fa';
@@ -16,7 +16,7 @@ export default function CartItem({ book, count } : propsType) {
         // delete book from cart
         order.setBooks(prevState => {
             const arr = prevState.filter(item => item.bookID !== id);
-            return arr;
+            return [...arr];
         });
     }
 

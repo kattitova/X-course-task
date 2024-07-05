@@ -1,6 +1,6 @@
-import React, { useEffect, useState } from 'react';
+import React, { useContext, useEffect } from 'react';
 import {
-  BrowserRouter, Routes, Route, Navigate, redirect
+  BrowserRouter, Routes, Route, Navigate
 } from "react-router-dom";
 
 import Header from './components/Header/Header';
@@ -10,48 +10,49 @@ import SpecificBook from "./Pages/SpecificBook/SpecificBook";
 import Footer from "./components/Footer/Footer";
 import Cart from './Pages/Cart/Cart';
 import Page404 from './Pages/Page404/Page404';
-import { UserContext } from "./context/UserContex";
-import { BooksContext, arrayBooksType } from './context/BooksContext';
+
+import { UserContext, userContextType } from "./context/UserContex";
+import { BooksContext, booksContextType } from './context/BooksContext';
+import useLocalStorage from './hooks/useLocalStorage';
 
 import './App.css';
-import booksList from "./assets/books.json";
-
-type localUserType = {
-  userName: string,
-  isLogged: boolean,
-}
 
 function App() {
-  //перевірка чи є збереженний користувач в localStorage
-  const localUser = window.localStorage.getItem("bookStoreUser");
-  const savedUser: localUserType = localUser ? JSON.parse(localUser) : "";
+  const user = useContext(UserContext) as userContextType;
+  const order = useContext(BooksContext) as booksContextType;
 
-  //стейт для контекстів користувача та книжок
-  const [userName, setUserName] = useState(savedUser.userName || "");
-  const [isLogged, setLogged] = useState(savedUser.isLogged || false);
-  const [orderBooks, setBooks] = useState<Array<arrayBooksType>>([]);
+  //викорисовуємо кастомний хук useLocalStorage для збереження даних користувачів в localStorage
+  const [, setUserStateLogIn, setUserStateLogOut, updateOrderBooks] = useLocalStorage("bookStoreUser");
 
   //перевірка чи залогінен користувач
   const redirectWithoutAuth = (component: JSX.Element) => {
     return (
       <>
-        {isLogged ? component : <Navigate to="/signin" />}
+        {user.isLogged ? component : <Navigate to="/signin" />}
       </>
     );
   }
 
-  //зміна даних користувача в localStorage
+  //вносить зміну даних користувача в localStorage при залогіненні/разлогіненні
   useEffect(() => {
-    const savedUser = {
-      userName: userName,
-      isLogged: isLogged,
-    };
-    window.localStorage.setItem("bookStoreUser", JSON.stringify(savedUser));
-  }, [isLogged]);
+    const setUser = {
+      userName: user.userName,
+      isLogged: user.isLogged,
+      orderBooks: order.orderBooks,
+    }
+    user.isLogged ? setUserStateLogIn(setUser) : setUserStateLogOut(setUser);
+  }, [user.isLogged]);
+
+  //вносить зміни в localStorage, коли оновлюється корзина
+  useEffect(() => {
+    updateOrderBooks({
+      userName: user.userName,
+      isLogged: user.isLogged,
+      orderBooks: order.orderBooks,
+    });
+  }, [order.orderBooks]);
   
   return (
-    <UserContext.Provider value = {{userName, setUserName, isLogged, setLogged}}>
-      <BooksContext.Provider value = {{orderBooks, setBooks, booksList}}>
         <BrowserRouter basename="X-course-task">
           <div className="App">
             <Header />
@@ -66,8 +67,6 @@ function App() {
           <Footer />
           </div>
         </BrowserRouter>
-      </BooksContext.Provider>
-    </UserContext.Provider>
   );
 }
 
