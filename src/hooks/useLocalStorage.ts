@@ -5,10 +5,11 @@ import { UserContext, userContextType } from "../context/UserContex";
 type localUserType = {
     userName: string,
     isLogged: boolean,
+    avatarID: number,
     orderBooks: Array<arrayBooksType>,
 }
 
-const initValue = {userName: "", isLogged: false, orderBooks: []};
+const initValue = {userName: "", isLogged: false, avatarID: 0, orderBooks: []};
 
 const useLocalStorage = (key: string) => {
     const [localStorageValue, setLocalStorageValue] = useState(() => {
@@ -32,6 +33,7 @@ const useLocalStorage = (key: string) => {
 
         booksContext.setBooks([]);
         userContext.setUserName("");
+        userContext.setAvatarID(0);
     });
 
     const setUserStateLogIn = ((user: localUserType) => {
@@ -41,6 +43,7 @@ const useLocalStorage = (key: string) => {
                 if (checkUser.userName !== "") {
                     //якщо юзер вже логінився, то йому ставимо isLogged = true, та вантажимо корзину в BooksContext
                     booksContext.setBooks(checkUser.orderBooks);
+                    userContext.setAvatarID(checkUser.avatarID);
                     return updateUserState(prevState, checkUser, "isLogged", true);
                 } else return [...prevState];
             } else return [...prevState, user];

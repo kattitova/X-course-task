@@ -4,7 +4,6 @@ import { UserContext, userContextType} from "../../context/UserContex";
 import { BooksContext, arrayBooksType, booksContextType } from '../../context/BooksContext';
 
 import {ReactComponent as CartImg} from "../../assets/images/cart.svg";
-import avatarImg from "../../assets/images/avatar.png";
 import "./UserPanel.css";
 
 export default function UserPanel() {
@@ -41,7 +40,7 @@ export default function UserPanel() {
                 </button>
             </Link>
             <div className='user-info'>
-                <img className="avatar" src={avatarImg} alt="avatar"/> 
+                <img className="avatar" src={process.env.PUBLIC_URL + "/assets/images/avatars/avatar-" + user.avatarID + ".png"} alt="avatar"/> 
                 <span>{user.isLogged ? user.userName : "Username"}</span>
             </div>
         </div>

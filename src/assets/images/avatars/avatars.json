@@ -1,0 +1,54 @@
+{
+    "avatarsList": [
+        {
+            "id": 0,
+            "src": "avatar-0.png",
+            "alt": "avatar don't load"
+        },
+        {
+            "id": 1,
+            "src": "avatar-1.png",
+            "alt": "avatar-1"
+        },
+        {
+            "id": 2,
+            "src": "avatar-2.png",
+            "alt": "avatar-2"
+        },
+        {
+            "id": 3,
+            "src": "avatar-3.png",
+            "alt": "avatar-3"
+        },
+        {
+            "id": 4,
+            "src": "avatar-4.png",
+            "alt": "avatar-4"
+        },
+        {
+            "id": 5,
+            "src": "avatar-5.png",
+            "alt": "avatar-5"
+        },
+        {
+            "id": 6,
+            "src": "avatar-6.png",
+            "alt": "avatar-6"
+        },
+        {
+            "id": 7,
+            "src": "avatar-7.png",
+            "alt": "avatar-7"
+        },
+        {
+            "id": 8,
+            "src": "avatar-8.png",
+            "alt": "avatar-8"
+        },
+        {
+            "id": 9,
+            "src": "avatar-9.png",
+            "alt": "avatar-9"
+        }
+    ]
+}

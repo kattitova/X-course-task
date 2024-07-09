@@ -6,7 +6,7 @@
 }
 
 .cart__purshaseButton {
-  background-color: #0a8989;
+  background-color: #0c8f97;
   color: #ffffff;
   padding: 5px 10px;
   outline: none;
@@ -21,7 +21,7 @@
   background-color: #037878;
 }
 .cart__purshaseButton:disabled:hover {
-  background-color: #0a8989;
+  background-color: #0c8f97;
 }
 
 .cart__table {

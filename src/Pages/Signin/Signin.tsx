@@ -2,7 +2,7 @@ import { useContext, useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import { UserContext, userContextType} from "../../context/UserContex";
 
-import nonAvatar from "../../assets/images/avatar.png"
+import SigninAvatar from "../../components/SigninAvatar/SigninAvatar";
 import "./Signin.css";
 
 export default function Signin() {
@@ -26,7 +26,7 @@ export default function Signin() {
 
     return (
         <div className="signin-wrapper">
-            <img className="signin-avatar" src={nonAvatar} alt="avatar don't load" />
+            <SigninAvatar />
             <label htmlFor="userName">Username</label>
             <input 
                 className="userName" 

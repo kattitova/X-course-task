@@ -10,7 +10,7 @@
 .signin-avatar {
   width: 160px;
   height: auto;
-  border: 1px solid #0a8989;
+  border: 1px solid #0c8f97;
   border-radius: 50%;
   padding: 5px;
   margin-bottom: 15px;
@@ -22,12 +22,12 @@
   outline: none;
   padding: 5px 10px;
   border-radius: 5px;
-  border: 1px solid #0a8989;
+  border: 1px solid #0c8f97;
   text-align: center;
 }
 
 .signin-button {
-  background-color: #0a8989;
+  background-color: #0c8f97;
   color: #ffffff;
   padding: 5px 10px;
   outline: none;
@@ -42,7 +42,7 @@
   background-color: #037878;
 }
 .signin-button:disabled:hover {
-  background-color: #0a8989;
+  background-color: #0c8f97;
 }
 .signin-button:disabled {
   opacity: 0.6;

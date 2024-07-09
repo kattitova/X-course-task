@@ -8,7 +8,7 @@ header {
 }
 header::after {
   content: "";
-  border-bottom: 1px solid #C8C5BC;
+  border-bottom: 1px solid #bcbfc8;
   position: absolute;
   bottom: 0;
   width: 98%;

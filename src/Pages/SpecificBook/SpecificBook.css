@@ -24,7 +24,7 @@
 }
 .single-book__price {
   grid-area: price;
-  border: 1px dotted #0a8989;
+  border: 1px dotted #0c8f97;
   border-radius: 5px;
   max-height: 250px;
   display: flex;
@@ -59,7 +59,7 @@
   height: 30px;
   width: 50px;
   outline: none;
-  border: 1px solid #0a8989;
+  border: 1px solid #0c8f97;
   border-radius: 0;
   border-left: none;
   border-right: none;
@@ -74,7 +74,7 @@
   color: gray;
   outline: none;
   cursor: pointer;
-  border: 1px solid #0a8989;
+  border: 1px solid #0c8f97;
 }
 .single-book__price--buttons button:disabled {
   cursor: not-allowed;
@@ -109,7 +109,7 @@
   position: absolute;
   top: -35px;
   width: 30%;
-  border-top: 1px solid #C8C5BC;
+  border-top: 1px solid #bcbfc8;
   left: 50%;
   transform: translateX(-50%);
 }/*# sourceMappingURL=SpecificBook.css.map */

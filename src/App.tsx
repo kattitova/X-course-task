@@ -38,6 +38,7 @@ function App() {
     const setUser = {
       userName: user.userName,
       isLogged: user.isLogged,
+      avatarID: user.avatarID,
       orderBooks: order.orderBooks,
     }
     user.isLogged ? setUserStateLogIn(setUser) : setUserStateLogOut(setUser);
@@ -48,6 +49,7 @@ function App() {
     updateOrderBooks({
       userName: user.userName,
       isLogged: user.isLogged,
+      avatarID: user.avatarID,
       orderBooks: order.orderBooks,
     });
   }, [order.orderBooks]);

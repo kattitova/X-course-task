@@ -7,13 +7,13 @@
 }
 
 body {
-  background-color: #C8C5BC;
+  background-color: #bcbfc8;
   padding: 60px 50px;
 }
 
 .App {
-  background-color: #F0EEE2;
-  border: 8px solid #D7D4CD;
+  background-color: #e2e5f0;
+  border: 8px solid #cdced7;
   border-radius: 5px;
   min-height: calc(100vh - 120px);
   display: flex;
@@ -28,7 +28,7 @@ a {
   cursor: pointer;
 }
 a:hover {
-  color: #0a8989;
+  color: #0c8f97;
   font-weight: 600;
 }
 

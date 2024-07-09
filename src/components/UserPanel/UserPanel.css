@@ -8,8 +8,8 @@
   height: 100%;
 }
 .user-panel .signin {
-  border-left: solid 1px #C8C5BC;
-  border-right: solid 1px #C8C5BC;
+  border-left: solid 1px #bcbfc8;
+  border-right: solid 1px #bcbfc8;
   padding: 5px 20px;
 }
 .user-panel .signin button {
@@ -19,7 +19,7 @@
   outline: none;
 }
 .user-panel button {
-  background-color: #0a8989;
+  background-color: #0c8f97;
   color: #ffffff;
   padding: 5px 10px;
   outline: none;
@@ -33,7 +33,7 @@
   background-color: #037878;
 }
 .user-panel button:disabled:hover {
-  background-color: #0a8989;
+  background-color: #0c8f97;
 }
 .user-panel .user-info {
   display: flex;
@@ -41,7 +41,7 @@
   height: 100%;
 }
 .user-panel .user-info .avatar {
-  border: 1px solid #0a8989;
+  border: 1px solid #0c8f97;
   padding: 3px;
   border-radius: 50%;
   margin-right: 10px;
@@ -52,7 +52,7 @@
 }
 .user-panel .cart::before {
   content: "";
-  background-color: #0a8989;
+  background-color: #0c8f97;
   bottom: -10px;
   left: -10px;
   position: absolute;

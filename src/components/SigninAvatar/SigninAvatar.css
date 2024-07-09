@@ -1,0 +1,95 @@
+.signin__avatar--wrapper {
+  width: 200px;
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  align-items: center;
+  gap: 10px;
+}
+.signin__avatar--imageList {
+  border: 1px solid #bcbfc8;
+  border-radius: 10px;
+  height: auto;
+  width: 100%;
+  display: flex;
+  padding: 10px 20px;
+  overflow-x: hidden;
+  position: relative;
+  gap: 10px;
+}
+.signin__avatar::after, .signin__avatar::before {
+  content: "";
+  width: 18px;
+  height: calc(100% - 2px);
+  background-color: #e2e5f0;
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+}
+.signin__avatar::before {
+  left: 1px;
+  z-index: 1;
+  border-top-left-radius: 10px;
+  border-bottom-left-radius: 10px;
+}
+.signin__avatar::after {
+  right: 1px;
+  border-top-right-radius: 10px;
+  border-bottom-right-radius: 10px;
+}
+.signin__avatar--image {
+  height: 160px;
+  width: 160px;
+  border: 1px solid #0c8f97;
+  border-radius: 50%;
+  padding: 5px;
+  left: 0;
+  position: relative;
+  transition: left 0.5s ease-in-out;
+}
+.signin__avatar--arrow {
+  width: 26px;
+  position: absolute;
+  height: 26px;
+  color: #0c8f97;
+  padding-left: 2px;
+  z-index: 1;
+  background-color: #e2e5f0;
+  top: 50%;
+  outline: none;
+  border: none;
+}
+.signin__avatar--arrow svg {
+  width: 100%;
+  height: 100%;
+}
+.signin__avatar--arrow:hover {
+  color: #037878;
+  cursor: pointer;
+}
+.signin__avatar--arrow:disabled {
+  opacity: 0.6;
+  cursor: default;
+}
+.signin__avatar--arrow:disabled:hover {
+  color: #0c8f97;
+}
+.signin__avatar--arrow.right {
+  right: -15px;
+  transform: rotate(180deg) translateY(50%);
+}
+.signin__avatar--arrow.left {
+  left: -15px;
+  transform: translateY(-50%);
+}
+.signin__avatar--header, .signin__avatar--footer {
+  height: 30px;
+  width: 100%;
+  display: flex;
+  align-items: center;
+}
+.signin__avatar--footer > * {
+  height: 25px !important;
+  width: 25px !important;
+  stroke-width: 1px !important;
+}/*# sourceMappingURL=SigninAvatar.css.map */

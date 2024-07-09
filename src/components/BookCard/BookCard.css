@@ -1,5 +1,5 @@
 .book-wrapper {
-  border: 1px solid #FDFCF7;
+  border: 1px solid #f7f7fd;
   border-radius: 2px;
   overflow: hidden;
   padding: 20px 0;
@@ -16,10 +16,10 @@
   z-index: 0;
   transform: skewY(14deg);
   transform-origin: 0px 0px 0px;
-  background-color: #e5e3df;
+  background-color: #dddee3;
 }
 .book-wrapper:hover {
-  border-color: #0a8989;
+  border-color: #0c8f97;
 }
 
 .book-image {
@@ -66,10 +66,10 @@
 .book-info .book-price {
   font-size: 1.1em;
   font-weight: 600;
-  color: #0a8989;
+  color: #0c8f97;
 }
 .book-info .book-view-button {
-  background-color: #0a8989;
+  background-color: #0c8f97;
   color: #ffffff;
   padding: 5px 10px;
   outline: none;
@@ -83,5 +83,5 @@
   background-color: #037878;
 }
 .book-info .book-view-button:disabled:hover {
-  background-color: #0a8989;
+  background-color: #0c8f97;
 }/*# sourceMappingURL=BookCard.css.map */
