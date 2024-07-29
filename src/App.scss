@@ -18,8 +18,8 @@ body {
     border: 8px solid $borderColor;
     border-radius: 5px;
     min-height: calc(100vh - 2*$bodyVerticalPadding);
-    @include settingFlexPadding(0, space-between);
-    flex-direction: column;
+    display: grid;
+    grid-template-rows: 70px 1fr 25px;
 }
 
 a {

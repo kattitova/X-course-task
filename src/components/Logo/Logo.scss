@@ -1,0 +1,25 @@
+.logo-image {
+    height: 100%;
+    padding: 7px;
+    transform: rotate(-30deg);
+    margin-right: 10px;
+}
+
+.logo-wrapper {
+    align-self: center;
+    display: flex;
+    height: 100%;
+    align-items: center;
+
+    .logo-text {
+        font-size: 22px;
+        font-weight: 600;
+    }
+}
+
+.logo-text.author {
+    &::before {
+        content: "/";
+        margin: 0 10px;
+    }
+}

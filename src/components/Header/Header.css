@@ -15,18 +15,6 @@ header::after {
   left: 50%;
   transform: translateX(-50%);
 }
-header .logo-wrapper {
-  align-self: center;
-  display: flex;
-}
-header .logo-wrapper .logo-text {
-  font-size: 22px;
-  font-weight: 600;
-}
-header .logo-text.author::before {
-  content: "/";
-  margin: 0 10px;
-}
 
 @media screen and (max-width: 320px) {
   header {

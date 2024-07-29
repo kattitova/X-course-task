@@ -1,0 +1,10 @@
+.sort-select {
+  border: 1px solid #bcbfc8;
+  border-radius: 5px;
+  padding: 5px;
+  outline: none;
+}
+.sort-select:focus-within {
+  border-color: #0c8f97;
+  box-shadow: 0 0 0 0.25rem rgba(12, 143, 151, 0.4);
+}/*# sourceMappingURL=SortByPrice.css.map */

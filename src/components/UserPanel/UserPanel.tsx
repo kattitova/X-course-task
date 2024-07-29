@@ -10,8 +10,6 @@ export default function UserPanel() {
     const user = useContext(UserContext) as userContextType;
     const {orderBooks} = useContext(BooksContext) as booksContextType;
 
-    //const {setLogOut} = useLocalStorage("bookStoreUser", {userName: user.userName, isLogged: user.isLogged, orderBooks: orderBooks});
-
     const logOut = () => {
         user.setLogged(false);
     };

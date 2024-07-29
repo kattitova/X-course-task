@@ -1,3 +1,5 @@
+import "./SortByPrice.css";
+
 type propsType = {
     selectHandle: (e: React.ChangeEvent<HTMLSelectElement>) => void,
     selectValue: string,
@@ -5,7 +7,7 @@ type propsType = {
 
 export default function SortByPrice( { selectHandle, selectValue } : propsType ) {
     return (
-        <select 
+        <select className="sort-select"
             onChange={ selectHandle }
             value = { selectValue }
         >

@@ -44,8 +44,10 @@ export default function BookList() {
     
     return (
         <div className="books-list-wrapper">
-            <SearchBook searchHandle = { searchHandle } searchValue = { inputValue }/>
-            <SortByPrice selectHandle = { selectHandle } selectValue = {selectValue}/>
+            <div className="filter-panel">
+                <SearchBook searchHandle = { searchHandle } searchValue = { inputValue }/>
+                <SortByPrice selectHandle = { selectHandle } selectValue = {selectValue}/>
+            </div>
             <div className="books-list">
                 {list.length ? list : "no results"}
             </div>

@@ -5,8 +5,14 @@
 }
 
 .books-list {
-    @include settingFlexPadding(20px 0, space-between);
-    flex-wrap: wrap;
+    padding: 20px 0;
+    display: grid;
     column-gap: 10px;
     row-gap: 30px;
+    grid-template-columns: repeat(4, calc((100% - 30px)/4));
+}
+
+.filter-panel {
+    display: flex;
+    align-self: start;
 }

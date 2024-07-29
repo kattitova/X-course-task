@@ -1,1 +1,35 @@
-/*# sourceMappingURL=SearchBook.css.map */
+.search-wrapper {
+  display: flex;
+  border: 1px solid #bcbfc8;
+  border-radius: 5px;
+  padding: 5px;
+  background-color: white;
+  width: 200px;
+  justify-content: space-between;
+  align-items: center;
+  margin-right: 15px;
+}
+.search-wrapper:focus-within {
+  border-color: #0c8f97;
+  box-shadow: 0 0 0 0.25rem rgba(12, 143, 151, 0.4);
+}
+
+.search-input {
+  border: none;
+  outline: none;
+}
+.search-input::-moz-placeholder {
+  color: black;
+}
+.search-input::placeholder {
+  color: black;
+}
+
+.search-button {
+  border: none;
+  outline: none;
+  background-color: white;
+  display: flex;
+  font-size: 1.1em;
+  color: #666666;
+}/*# sourceMappingURL=SearchBook.css.map */
