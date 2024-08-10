@@ -5,8 +5,10 @@ export default function Logo() {
     return (
         <div className="logo-wrapper">
             <LogoImg className="logo-image" />
-            <h1 className="logo-text title">JS BAND STORE</h1>
-            <span className="logo-text author">Kateryna Tytova</span>
+            <div className="logo-text wrapper">
+                <h1 className="logo-text title">JS BAND STORE</h1>
+                <span className="logo-text author">Kateryna Tytova</span>
+            </div>
         </div>
     );
 };

@@ -9,9 +9,43 @@
        column-gap: 10px;
   row-gap: 30px;
   grid-template-columns: repeat(4, calc((100% - 30px) / 4));
+  justify-content: center;
 }
 
 .filter-panel {
   display: flex;
   align-self: start;
+}
+
+@media screen and (max-width: 1000px) {
+  .books-list {
+    grid-template-columns: repeat(3, calc((100% - 30px) / 3));
+  }
+}
+@media screen and (max-width: 800px) {
+  .books-list {
+    grid-template-columns: repeat(2, calc((100% - 30px) / 2));
+  }
+}
+@media screen and (max-width: 630px) {
+  .books-list {
+    grid-template-columns: calc(100% - 30px);
+  }
+}
+@media screen and (max-width: 530px) {
+  .filter-panel {
+    flex-direction: column;
+    align-items: center;
+  }
+  .filter-panel .sort-select {
+    width: 200px;
+  }
+  .filter-panel .search-wrapper {
+    margin-right: 0;
+  }
+}
+@media screen and (max-width: 420px) {
+  .books-list-wrapper {
+    padding: 20px 10px;
+  }
 }/*# sourceMappingURL=BooksList.css.map */

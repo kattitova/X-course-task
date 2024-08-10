@@ -17,7 +17,8 @@ body {
   border-radius: 5px;
   min-height: calc(100vh - 120px);
   display: grid;
-  grid-template-rows: 70px 1fr 25px;
+  grid-template-rows: 70px 1fr auto;
+  overflow: hidden;
 }
 
 a {
@@ -30,12 +31,11 @@ a:hover {
   font-weight: 600;
 }
 
-@media screen and (max-width: 320px) {
+@media screen and (max-width: 370px) {
   body {
     padding: 0;
   }
   .App {
     min-height: 100vh;
-    padding: 0 8px;
   }
 }/*# sourceMappingURL=App.css.map */

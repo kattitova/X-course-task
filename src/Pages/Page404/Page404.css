@@ -1,1 +1,64 @@
-/*# sourceMappingURL=Page404.css.map */
+.page404-wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 15px;
+  padding: 30px 50px;
+  position: relative;
+  z-index: 1;
+}
+.page404-wrapper::before {
+  content: "";
+  position: absolute;
+  background: url("../../assets/images/404-bg.png") no-repeat;
+  background-size: contain;
+  background-position: center;
+  background-origin: content-box;
+  width: calc(100% - 100px);
+  height: calc(100% - 20px);
+  top: 0;
+  left: 50px;
+  z-index: -1;
+}
+.page404-wrapper img {
+  -o-object-fit: contain;
+     object-fit: contain;
+}
+.page404-wrapper .page404-img {
+  width: 45%;
+}
+.page404-wrapper .page404-txt {
+  height: 60%;
+}
+
+@media screen and (max-width: 630px) {
+  .page404-wrapper {
+    flex-direction: column;
+  }
+  .page404-wrapper::before {
+    transform: rotate(70deg);
+    height: 100%;
+    width: calc(100% - 10px);
+    left: 0;
+  }
+  .page404-wrapper .page404-txt {
+    height: auto;
+    width: 45%;
+  }
+  .page404-wrapper .page404-img {
+    width: 60%;
+  }
+}
+@media screen and (max-width: 550px) {
+  .page404-wrapper {
+    padding: 10px;
+  }
+}
+@media screen and (max-width: 370px) {
+  .page404-wrapper .page404-txt {
+    width: 55%;
+  }
+  .page404-wrapper .page404-img {
+    width: 80%;
+  }
+}/*# sourceMappingURL=Page404.css.map */

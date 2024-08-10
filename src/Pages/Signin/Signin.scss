@@ -37,12 +37,14 @@
 }
 
 @media screen and (max-width: 320px){
-    a,
-    .signin-button {
-        width: 100%;
+    .signin-wrapper a,
+    .userName {
+        width: calc(100% - 16px);
+        justify-content: center;
+        display: flex;
     }
 
-    .userName {
+    .signin-button {
         width: 100%;
     }
 

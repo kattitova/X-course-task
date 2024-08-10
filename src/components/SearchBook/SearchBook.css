@@ -13,6 +13,9 @@
   border-color: #0c8f97;
   box-shadow: 0 0 0 0.25rem rgba(12, 143, 151, 0.4);
 }
+.search-wrapper:hover .search-button {
+  color: #0c8f97;
+}
 
 .search-input {
   border: none;

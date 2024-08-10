@@ -1,7 +1,6 @@
 .logo-image {
   height: 100%;
   padding: 7px;
-  transform: rotate(-30deg);
   margin-right: 10px;
 }
 
@@ -15,8 +14,31 @@
   font-size: 22px;
   font-weight: 600;
 }
+.logo-wrapper .logo-text.wrapper {
+  display: flex;
+  align-items: center;
+}
 
 .logo-text.author::before {
   content: "/";
   margin: 0 10px;
+}
+
+@media screen and (max-width: 630px) {
+  .logo-wrapper .logo-text {
+    font-size: 1.1em;
+  }
+  .logo-wrapper .logo-text.wrapper {
+    flex-direction: column;
+    justify-self: center;
+  }
+  .logo-wrapper .logo-text.author::before {
+    content: "";
+    margin: 0;
+  }
+}
+@media screen and (max-width: 420px) {
+  .logo-wrapper .logo-text {
+    font-size: 1em;
+  }
 }/*# sourceMappingURL=Logo.css.map */

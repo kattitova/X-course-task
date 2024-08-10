@@ -1,0 +1,47 @@
+.menu-icon {
+  display: none;
+  width: 26px;
+  height: 20px;
+  cursor: pointer;
+  position: relative;
+  z-index: 4;
+}
+.menu-icon span {
+  background-color: black;
+  height: 3px;
+  position: absolute;
+  width: 100%;
+  left: 0;
+  transition: all 0.3s ease;
+  border-radius: 10px;
+}
+.menu-icon span:first-child {
+  top: 0;
+}
+.menu-icon span:nth-child(2) {
+  top: 9px;
+}
+.menu-icon span:last-child {
+  top: 18px;
+}
+.menu-icon.active span:nth-child(2) {
+  opacity: 0;
+}
+.menu-icon.active span:first-child,
+.menu-icon.active span:last-child {
+  top: 6px;
+  background-color: #0c8f97;
+}
+.menu-icon.active span:first-child {
+  transform: rotate(45deg);
+}
+.menu-icon.active span:last-child {
+  transform: rotate(-45deg);
+}
+
+@media screen and (max-width: 1000px) {
+  .menu-icon {
+    display: flex;
+    margin-left: auto;
+  }
+}/*# sourceMappingURL=MenuIcon.css.map */

@@ -2,7 +2,7 @@
 
 .cart__item {
     display: grid;
-    grid-template-columns: 1fr 3fr repeat(4, 1fr);
+    grid-template-columns: 1fr 3fr repeat(3, 1fr) 0.5fr;
     grid-gap: 5px;
     align-items: center;
     width: 100%;
@@ -22,6 +22,7 @@
         cursor: pointer;
         font-size: 18px;
         width: 30px;
+        justify-self: end;
 
         &:hover {
             color: $activeColor;

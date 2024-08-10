@@ -3,6 +3,7 @@
   display: flex;
   -moz-column-gap: 10px;
        column-gap: 10px;
+  height: 100%;
 }
 .user-panel img {
   height: 100%;
@@ -98,4 +99,57 @@
   padding: 0;
   align-items: center;
   z-index: 2;
+}
+
+@media screen and (max-width: 1000px) {
+  .user-panel {
+    flex-direction: column;
+    width: 100px;
+    padding: 70px 0 20px 0;
+    background-color: #e2e5f0;
+    gap: 15px;
+    height: -moz-fit-content;
+    height: fit-content;
+    border-bottom-left-radius: 10px;
+    box-shadow: 2px -2px 5px black;
+  }
+  .user-panel img {
+    width: 50%;
+    height: auto;
+  }
+  .user-panel .signin {
+    border-left: 0;
+    border-right: 0;
+  }
+  .user-panel .signin button {
+    padding: 8px;
+    white-space: nowrap;
+  }
+  .user-panel .cart {
+    width: 100%;
+    height: auto;
+    display: flex;
+    justify-content: center;
+  }
+  .user-panel .cart::before {
+    width: 55%;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+  }
+  .user-panel .cart .cart-img {
+    width: 50%;
+    height: auto;
+  }
+  .user-panel .cart:hover::before {
+    height: 100%;
+  }
+  .user-panel .user-info {
+    flex-direction: column;
+    width: 100%;
+    height: auto;
+  }
+  .user-panel .user-info .avatar {
+    margin-right: 0;
+  }
 }/*# sourceMappingURL=UserPanel.css.map */

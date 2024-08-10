@@ -4,6 +4,7 @@
     align-items: center;
     display: flex;
     column-gap: 10px;
+    height: 100%;
 
     img {
         height: 100%;
@@ -100,6 +101,71 @@
                 @include settingFlexPadding(0, center);
                 align-items: center;
                 z-index: 2;
+            }
+        }
+    }
+}
+
+
+@media screen and (max-width: 1000px) {
+    .user-panel {
+        flex-direction: column;
+        width: 100px;
+        padding: 70px 0 20px 0;
+        background-color: $wrapperColor;
+        gap: 15px;
+        height: fit-content;
+        border-bottom-left-radius: 10px;
+        box-shadow: 2px -2px 5px black;
+
+        img {
+            width: 50%;
+            height: auto;
+        }
+
+        .signin {
+            border-left: 0;
+            border-right: 0;
+
+            button {
+                padding: 8px;
+                white-space: nowrap;
+            }
+        }
+
+        .cart {
+            width: 100%;
+            height: auto;
+            display: flex;
+            justify-content: center;
+            
+            &::before {
+                width: 55%;
+                bottom: 0;
+                left: 50%;
+                transform: translateX(-50%);
+            }
+
+            .cart-img {
+                width: 50%;
+                height: auto;
+            }
+        
+
+            &:hover {
+                &::before {
+                    height: 100%;
+                }
+            }
+        }
+
+        .user-info {
+            flex-direction: column;
+            width: 100%;
+            height: auto;
+
+            .avatar {
+                margin-right: 0;
             }
         }
     }

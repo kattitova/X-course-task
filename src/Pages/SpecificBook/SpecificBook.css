@@ -32,6 +32,7 @@
   padding: 20px;
   flex-direction: column;
   font-weight: 600;
+  z-index: 2;
 }
 .single-book__price .button-cart {
   margin-top: 20px;
@@ -57,7 +58,7 @@
 }
 .single-book__price--buttons input {
   height: 30px;
-  width: 50px;
+  width: 40px;
   outline: none;
   border: 1px solid #0c8f97;
   border-radius: 0;
@@ -112,4 +113,49 @@
   border-top: 1px solid #bcbfc8;
   left: 50%;
   transform: translateX(-50%);
+}
+
+@media screen and (max-width: 1040px) {
+  .single-book {
+    grid-template-areas: "image info" "image price" "description description";
+    grid-template-columns: auto 1fr;
+  }
+  .single-book__description {
+    padding: 0 50px;
+    padding-top: 55px;
+  }
+  .single-book__description::before {
+    height: calc(100% + 35px);
+    top: 0;
+    width: 100%;
+  }
+  .single-book__description::after {
+    top: 33px;
+  }
+}
+@media screen and (max-width: 820px) {
+  .single-book {
+    padding: 50px 30px;
+    grid-template-areas: "image" "info" "price" "description";
+    grid-template-columns: auto;
+    justify-items: center;
+  }
+  .single-book__image {
+    margin: 0 auto;
+  }
+  .single-book__price {
+    width: 350px;
+  }
+}
+@media screen and (max-width: 550px) {
+  .single-book__price {
+    width: 100%;
+  }
+  .single-book__description {
+    padding: 0 15px;
+    padding-top: 55px;
+  }
+  .single-book__image img {
+    width: 100%;
+  }
 }/*# sourceMappingURL=SpecificBook.css.map */
