@@ -19,7 +19,21 @@
   font-size: 18px;
   width: 30px;
   justify-self: end;
+  text-align: end;
 }
 .cart__item--deleteButton:hover {
   color: #0c8f97;
+}
+
+@media screen and (max-width: 560px) {
+  .cart__item {
+    grid-template-columns: 2.5fr repeat(3, 1fr) 0.5fr;
+    grid-gap: 3px;
+  }
+  .cart__item > :first-child {
+    display: none;
+  }
+  .cart__item p:not(:first-child):not(:nth-child(2)) {
+    text-align: center;
+  }
 }/*# sourceMappingURL=CartItem.css.map */

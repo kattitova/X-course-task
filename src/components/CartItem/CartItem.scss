@@ -23,9 +23,25 @@
         font-size: 18px;
         width: 30px;
         justify-self: end;
+        text-align: end;
 
         &:hover {
             color: $activeColor;
+        }
+    }
+}
+
+@media screen and (max-width: 560px) {
+    .cart__item {
+        grid-template-columns: 2.5fr repeat(3, 1fr) 0.5fr;
+        grid-gap: 3px;
+
+        & > :first-child {
+            display: none;
+        }
+
+        p:not(:first-child):not(:nth-child(2)) {
+            text-align: center;
         }
     }
 }
