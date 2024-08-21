@@ -1,8 +1,10 @@
 import { useContext } from "react";
+import { Link } from "react-router-dom";
 import { BooksContext, booksContextType } from "../../context/BooksContext";
 import CartItem from "../../components/CartItem/CartItem";
 
 import "./Cart.css";
+import EmptyCartImg from "../../assets/images/empty-cart.png";
 
 export default function Cart() {
     const order = useContext(BooksContext) as booksContextType;
@@ -27,7 +29,12 @@ export default function Cart() {
 
     const EmptyCart = () => {
         return (
-            <>Empty Cart</>
+            <div className="cart__wrapper empty">
+                <h3>Your cart is empty</h3>
+                <img className="empty-cart-img" src={EmptyCartImg} alt="empty cart" />
+                <p>Looks like you have no items in your shopping cart.</p>
+                <p>Click <Link className="back-to-shopping" to="/books">here</Link> to continue your shopping.</p>
+            </div>
         );
     };
 

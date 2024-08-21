@@ -8,9 +8,10 @@ import BookImage from "../BookImage/BookImage";
 type propsType = {
     book: bookType,
     count: number,
+    key: number,
 }
 
-export default function CartItem({ book, count } : propsType) {
+export default function CartItem({ book, count, key } : propsType) {
     const order = useContext(BooksContext) as booksContextType;
     const deleteItemHandle = (id: number) => {
         // delete book from cart
@@ -21,7 +22,7 @@ export default function CartItem({ book, count } : propsType) {
     }
 
     return (
-        <div className="cart__item">
+        <div className="cart__item" key={key}>
             <BookImage imgClass="cart__item--image" src={book.image} title={book.title} />
             <p><Link to={`/books/${book.id}`}>{ book.title }</Link></p>
             <p>{ book.price }</p>

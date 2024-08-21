@@ -5,6 +5,23 @@
     padding: 50px 100px;
     flex-direction: column;
     width: 100%;
+
+    .back-to-shopping {
+        text-decoration: underline;
+        text-underline-offset: 2px;
+    }
+
+    .empty-cart-img {
+        width: 100%;
+        max-width: 200px;
+        height: auto;
+    }
+
+    &.empty {
+        align-items: center;
+        justify-content: space-around;
+        text-align: center;
+    }
 }
 
 .cart__purshaseButton {

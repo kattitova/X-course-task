@@ -12,7 +12,7 @@ export default function Header() {
     const {isLogged} = useContext(UserContext) as userContextType;
     const [menuStatus, setMenuStatus] = useState("");
 
-    const setMenuStatusHandle = () => {
+    const setMenuStatusHandle = (event: React.FormEvent<HTMLDivElement>) => {
         setMenuStatus((prevStat) => {
             return prevStat === "active" ? "" : "active";
         });
@@ -21,7 +21,7 @@ export default function Header() {
     return (
         <header>
             <Logo />
-            <MenuIcon menuStatus = {menuStatus} setMenuStatus = {setMenuStatusHandle} />
+            { isLogged ? <MenuIcon menuStatus = {menuStatus} setMenuStatus = {setMenuStatusHandle} /> : <></> }
             { isLogged ? <AdaptiveMenuBar setMenuStatus = {setMenuStatusHandle}><UserPanel /></AdaptiveMenuBar> : <></> }
         </header>
     );
