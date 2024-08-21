@@ -1,6 +1,6 @@
 {
   "files": {
-    "main.css": "/X-course-task/static/css/main.4c910192.css",
+    "main.css": "/X-course-task/static/css/main.95c1dd70.css",
     "main.js": "/X-course-task/static/js/main.c5c26df6.js",
     "static/media/404-2.png": "/X-course-task/static/media/404-2.7fbaa110cd0fd77ac9f8.png",
     "static/media/empty-cart.png": "/X-course-task/static/media/empty-cart.2702f7e0177b608b758b.png",
@@ -9,11 +9,11 @@
     "static/media/cart.svg": "/X-course-task/static/media/cart.5a1c3c755c07e59db7d65be6bc8d8bfb.svg",
     "static/media/logo.svg": "/X-course-task/static/media/logo.80d36da8f863765574c4cddb5f1ae7a4.svg",
     "index.html": "/X-course-task/index.html",
-    "main.4c910192.css.map": "/X-course-task/static/css/main.4c910192.css.map",
+    "main.95c1dd70.css.map": "/X-course-task/static/css/main.95c1dd70.css.map",
     "main.c5c26df6.js.map": "/X-course-task/static/js/main.c5c26df6.js.map"
   },
   "entrypoints": [
-    "static/css/main.4c910192.css",
+    "static/css/main.95c1dd70.css",
     "static/js/main.c5c26df6.js"
   ]
 }
