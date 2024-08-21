@@ -41,7 +41,7 @@
     display: block;
   }
 }
-@media screen and (max-width: 370px) {
+@media screen and (max-width: 400px) {
   .menu-icon.active + .adaptive-menu {
     min-height: calc(100vh - 16px);
   }
